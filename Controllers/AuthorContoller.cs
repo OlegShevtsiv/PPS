@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Controllers
 {
-    public class BookController : Controller
+    public class AuthorController : Controller
     {
-        public IActionResult GetBook()
+        public IActionResult GetAuthor()
         {
-            ViewData["Message"] = "Some given Book message";
+            ViewData["Message"] = "Some given author message";
 
             return View();
         }
