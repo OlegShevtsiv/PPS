@@ -6,6 +6,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Library.Models
 {
+
+    public enum Role
+    {
+        User, Admin
+    }
+
     public class User
     {
         public int Id { get; set; }
@@ -13,7 +19,7 @@ namespace Library.Models
 
         [DataType(DataType.Date)]
         public DateTime RegistrationDate { get; set; }
-        public bool IsAdmin { get; set; }
+        public Role? Role { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
     }

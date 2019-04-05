@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Library.Models
 {
-    public class BookStore
+    public class BookStorage
     {
         public int Id { get; set; }
         public string Url { get; set; }

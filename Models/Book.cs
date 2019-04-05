@@ -10,13 +10,13 @@ namespace Library.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public int AuthorId { get; set; }
+        public ICollection<int> AuthorsId { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public decimal Rate { get; set; }
         public string Description { get; set; }
-        public string Genre { get; set; }
+        public ICollection<string> Genres { get; set; }
     }
 }
 
