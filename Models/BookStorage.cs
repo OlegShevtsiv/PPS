@@ -9,5 +9,11 @@ namespace Library.Models
     {
         public int Id { get; set; }
         public string Url { get; set; }
+
+        public BookStorage(int _id, string _url)
+        {
+            Id = _id;
+            Url = _url;
+        }
     }
 }
