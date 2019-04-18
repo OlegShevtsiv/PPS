@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Library.Models
+namespace DataAccess.Models
 {
     public class BookStorage
     {

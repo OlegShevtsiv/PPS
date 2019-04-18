@@ -2,8 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using DataAccess.Models;
 
-namespace Library.Data
+namespace DataAccess.Data
 {
     public class LibraryContext : IdentityDbContext
     {

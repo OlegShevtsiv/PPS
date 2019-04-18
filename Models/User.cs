@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
-namespace Library.Models
+namespace DataAccess.Models
 {
 
     public enum Role
@@ -18,7 +15,7 @@ namespace Library.Models
     public class User : IdentityUser
     {
         public int Id { get; set; }
-        public string LoginName { get; set; }
+        public string Email { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime RegistrationDate { get; set; }
@@ -26,10 +23,10 @@ namespace Library.Models
         public string Login { get; set; }
         public string Password { get; set; }
 
-        public User(int _id, string _loginName, DateTime _registrationDate, Role _role, string _login, string _password)
+        public User(int _id, string _email, DateTime _registrationDate, Role _role, string _login, string _password)
         {
             Id = _id;
-            LoginName = _loginName;
+            Email = _email;
             RegistrationDate = _registrationDate;
             Role = _role;
             Login = _login;
