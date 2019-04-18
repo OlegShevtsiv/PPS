@@ -1,13 +1,15 @@
 ﻿using Library.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Library.Data
 {
-    public class LibraryContext : DbContext
+    public class LibraryContext : IdentityDbContext
     {
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
-        public DbSet<User> Users { get; set; }
+       // public DbSet<User> Users { get; set; }
         public DbSet<BookStorage> BookStorages { get; set; }
 
 

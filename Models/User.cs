@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace Library.Models
 {
@@ -14,7 +15,7 @@ namespace Library.Models
         LIBRARY_ADMIN
     }
 
-    public class User
+    public class User : IdentityUser
     {
         public int Id { get; set; }
         public string LoginName { get; set; }
