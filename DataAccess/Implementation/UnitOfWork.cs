@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Library.Data.Interfaces;
-using DataAccess;
-using DataAccess.Implementation;
+using DataAccess.Interfaces;
 
-namespace Library.Data.Implementation
+namespace DataAccess.Implementation
 {
     public class UnitOfWork : IUnitOfWork
     {

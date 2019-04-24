@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Linq;
-using Library.Data.Interfaces;
-using DataAccess;
+using DataAccess.Interfaces;
 
 namespace DataAccess.Implementation
 {
