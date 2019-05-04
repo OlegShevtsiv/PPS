@@ -91,6 +91,7 @@ namespace Services.Implementation
             entity.Title = dto.Title;
             entity.Description = dto.Description;
             entity.Rate = dto.Rate;
+            entity.ImagePath = dto.ImagePath;
             entity.ReleaseDate = dto.ReleaseDate;
             entity.Genres = dto.Genres;
         

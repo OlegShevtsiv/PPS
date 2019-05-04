@@ -4,3 +4,12 @@ C:\Users\Admin\Desktop\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj
 C:\Users\Admin\Desktop\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
 C:\Users\Admin\Desktop\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+C:\Users\User\Desktop\Github\PPS\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+C:\Users\User\Desktop\Github\PPS\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+C:\Users\User\Desktop\Github\PPS\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb

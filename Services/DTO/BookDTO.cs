@@ -11,8 +11,10 @@ namespace Services.DTO
 
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
+
+        public string ImagePath { get; set; }
         public decimal Rate { get; set; }
         public string Description { get; set; }
-        public ICollection<string> Genres { get; set; }
+        public List<string> Genres { get; set; }
     }
 }

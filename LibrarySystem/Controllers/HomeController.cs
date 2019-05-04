@@ -15,8 +15,7 @@ namespace Library.Controllers
         }
         public IActionResult Index()
         {
-            return View();
-
+            return View(db.Books.ToList());
         }
 
         public IActionResult Error()
