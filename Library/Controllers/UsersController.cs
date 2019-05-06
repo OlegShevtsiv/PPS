@@ -10,19 +10,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Library.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "user admin")]
     public class UsersController : Controller
     {
         UserManager<User> _userManager;
-
-        public UsersController(UserManager<User> userManager)
+        RoleManager<IdentityRole> _roleManager;
+        public UsersController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
         {
+            _roleManager = roleManager;
             _userManager = userManager;
         }
 
         public IActionResult Index() => View(_userManager.Users.ToList());
 
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> EditUser(string id)
         {
             User user = await _userManager.FindByIdAsync(id);
             if (user == null)
@@ -34,7 +35,7 @@ namespace Library.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(EditUserViewModel model)
+        public async Task<IActionResult> EditUser(EditUserViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -71,6 +72,53 @@ namespace Library.Controllers
                 IdentityResult result = await _userManager.DeleteAsync(user);
             }
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> EditRoles(string userId)
+        {
+            // get user
+            User user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                // gets user`s roles list
+                var userRoles = await _userManager.GetRolesAsync(user);
+                var allRoles = _roleManager.Roles.ToList();
+                ChangeRoleViewModel model = new ChangeRoleViewModel
+                {
+                    UserId = user.Id,
+                    UserEmail = user.Email,
+                    UserRoles = userRoles,
+                    AllRoles = allRoles
+                };
+                return View(model);
+            }
+
+            return NotFound();
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditRoles(string userId, List<string> roles)
+        {
+            // gets user
+            User user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                // gets user`s roles list
+                var userRoles = await _userManager.GetRolesAsync(user);
+                // gets all roles
+                var allRoles = _roleManager.Roles.ToList();
+                // gets roles list, that was added 
+                var addedRoles = roles.Except(userRoles);
+                // gets roles that was deleted
+                var removedRoles = userRoles.Except(roles);
+
+                await _userManager.AddToRolesAsync(user, addedRoles);
+
+                await _userManager.RemoveFromRolesAsync(user, removedRoles);
+
+                return RedirectToAction("Index");
+            }
+
+            return NotFound();
         }
     }
 }
