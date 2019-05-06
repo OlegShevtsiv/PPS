@@ -13,3 +13,6 @@ C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.
 C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
 C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
 C:\Users\User\Desktop\Github\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
+C:\Users\Admin\Desktop\PPS\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+C:\Users\Admin\Desktop\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+C:\Users\Admin\Desktop\PPS\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
