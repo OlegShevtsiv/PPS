@@ -1,20 +1,20 @@
-﻿@model DataAccess.Models.Book
+﻿@*@model DataAccess.Models.Book*@
 @{
     ViewData["Title"] = "Get book info";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container pt-3 pb-4">
-    <div class="row py-5">
+    @*<div class="row py-5">
         <div class="col-12 col-md-5 col-lg-4 d-flex flex-column pt-3">
             <img src="@Model.ImagePath" alt="book (here must be the name of book)" class="w-100">
             <div class="book_desc">
-                <div class="h4">Authors</div>
+                <div class="h4">Authors</div>*@
                 @*@foreach (var a in Model.Authors)
                 {
                     <div class="h5 text-secondary">@a.Name @a.Surname</div>
                 }*@
-                <div class="h4">Genres</div>
+                @*<div class="h4">Genres</div>
                 @foreach (var g in Model.Genres)
                 {
                     <div class="h5 text-secondary">@g</div>
@@ -53,6 +53,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 </div>
 
