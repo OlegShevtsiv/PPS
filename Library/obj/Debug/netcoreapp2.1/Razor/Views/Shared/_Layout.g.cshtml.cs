@@ -62,7 +62,7 @@ using Library.Models;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 314, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db34ecd7fe4047f8bcc9d654ddec6298", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d65a16b7d8644179a8424d942580a6c5", async() => {
                 BeginContext(31, 41, true);
                 WriteLiteral("\r\n    <meta charset=\"UTF-8\">\r\n    <title>");
                 EndContext();
@@ -92,12 +92,12 @@ using Library.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(341, 1045, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c595f3eae9b94f9c8bf411bdf8db2883", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1c1b02d9d6ce41478bf0ef0f1aaa57b1", async() => {
                 BeginContext(347, 253, true);
                 WriteLiteral("\r\n\r\n    <header class=\"container py-3 position-fixed fixed-top\" style=\"background-color: #a7e9fb\">\r\n        <div class=\"row\">\r\n            <div class=\"col-12 d-flex justify-content-end\">\r\n                <div class=\"navbar-header\">\r\n                    ");
                 EndContext();
                 BeginContext(600, 93, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8d9a644898b47a1823937fe5de6483b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ea2a4e2b8854e4ebffd5ef3f4b19378", async() => {
                     BeginContext(677, 12, true);
                     WriteLiteral("Book Library");
                     EndContext();
@@ -127,7 +127,7 @@ using Library.Models;
                 WriteLiteral("\r\n                ");
                 EndContext();
                 BeginContext(959, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f1510e4626724f4c847b69a0ac782d5d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "63533fec74bf4e178c928382af37c7ae", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -146,7 +146,7 @@ using Library.Models;
                 WriteLiteral("\r\n\r\n            </div>\r\n        </div>\r\n    </header>\r\n\r\n    ");
                 EndContext();
                 BeginContext(1052, 40, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "bb656069ae214f9c9b2b0a4d008f7d5e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "68d321d6c89a451286103b0ddb7c0238", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

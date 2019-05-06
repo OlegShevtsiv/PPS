@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DataAccess.Models.User>
+@{
+    ViewData["Title"] = "Users list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Users list</h2>
+<table class="table">
+    @foreach (var user in Model)
+    {
+    <tr>
+        <td>@user.Name</td>
+        <td>@user.Email</td>
+        <td>
+            <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-userid="@user.Id">Access rights</a>
+        </td>
+    </tr>
+    }
+</table>
