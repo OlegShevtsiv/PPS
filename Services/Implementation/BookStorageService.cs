@@ -18,7 +18,7 @@ namespace Services.Implementation
         {
         }
 
-        public override BookStorageDTO Get(int id)
+        public override BookStorageDTO Get(string id)
         {
             BookStorage entity = Repository
               .Get(e => e.Id == id)
@@ -63,7 +63,7 @@ namespace Services.Implementation
             _unitOfWork.SaveChanges();
         }
 
-        public override void Remove(int id)
+        public override void Remove(string id)
         {
             BookStorage entity = Repository
              .Get(e => e.Id == id)

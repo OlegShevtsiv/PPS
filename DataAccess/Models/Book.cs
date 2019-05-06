@@ -6,9 +6,10 @@ namespace DataAccess.Models
 {
     public class Book
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Title { get; set; }
-        public List<Author> Authors { get; set; }
+        public Author Author { get; set; }
+        public string AuthorId { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
@@ -20,11 +21,12 @@ namespace DataAccess.Models
 
         public Book() { }
 
-        public Book(int _id, string _title, List<Author> _authors, DateTime _releaseDate, string imagePath, decimal _rate, string _description, List<string> _genres)
+        public Book(string _id, string _title, Author _author, string _authorId, DateTime _releaseDate, string imagePath, decimal _rate, string _description, List<string> _genres)
         {
             Id = _id;
             Title = _title;
-            Authors = _authors;
+            Author = _author;
+            AuthorId = _authorId;
             ReleaseDate = _releaseDate;
             ImagePath = imagePath;
             Rate = _rate;

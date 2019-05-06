@@ -18,7 +18,7 @@ namespace Services.Implementation
         {
         }
 
-        public override BookDTO Get(int id)
+        public override BookDTO Get(string id)
         {
             Book entity = Repository
               .Get(e => e.Id == id)
@@ -63,7 +63,7 @@ namespace Services.Implementation
             _unitOfWork.SaveChanges();
         }
 
-        public override void Remove(int id)
+        public override void Remove(string id)
         {
             Book entity = Repository
              .Get(e => e.Id == id)
@@ -90,6 +90,7 @@ namespace Services.Implementation
 
             entity.Title = dto.Title;
             entity.Description = dto.Description;
+            entity.AuthorId = dto.AuthorId;
             entity.Rate = dto.Rate;
             entity.ImagePath = dto.ImagePath;
             entity.ReleaseDate = dto.ReleaseDate;
@@ -110,6 +111,8 @@ namespace Services.Implementation
             {
                 Id = entity.Id,
                 Title = entity.Title,
+                AuthorId = entity.AuthorId,
+                ImagePath = entity.ImagePath,
                 Rate = entity.Rate,
                 ReleaseDate = entity.ReleaseDate,
                 Description = entity.Description,
@@ -130,6 +133,8 @@ namespace Services.Implementation
             {
                 Id = dto.Id,
                 Title = dto.Title,
+                AuthorId = dto.AuthorId,
+                ImagePath = dto.ImagePath,
                 Rate = dto.Rate,
                 ReleaseDate = dto.ReleaseDate,
                 Description = dto.Description,

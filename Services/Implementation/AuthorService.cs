@@ -18,7 +18,7 @@ namespace Services.Implementation
         {
         }
 
-        public override AuthorDTO Get(int id)
+        public override AuthorDTO Get(string id)
         {
             Author entity = Repository
               .Get(e => e.Id == id)
@@ -63,7 +63,7 @@ namespace Services.Implementation
             _unitOfWork.SaveChanges();
         }
 
-        public override void Remove(int id)
+        public override void Remove(string id)
         {
             Author entity = Repository
              .Get(e => e.Id == id)
