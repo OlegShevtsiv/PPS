@@ -47,6 +47,20 @@ namespace Services.Implementation
             return entities.Select(e => MapToDto(e));
         }
 
+        public override IEnumerable<BookStorageDTO> GetAll()
+        {
+            List<BookStorage> entities = Repository
+              .Get(p => p != null)
+              .ToList();
+
+            if (!entities.Any())
+            {
+                throw new ObjectNotFoundException();
+            }
+
+            return entities.Select(e => MapToDto(e));
+        }
+
         public override void Add(BookStorageDTO dto)
         {
             BookStorage checkEntity = Repository
