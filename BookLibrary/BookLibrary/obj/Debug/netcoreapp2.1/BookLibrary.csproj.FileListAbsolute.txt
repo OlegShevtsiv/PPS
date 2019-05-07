@@ -207,9 +207,6 @@ C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
-C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Users\EditUser.g.cshtml.cs
-C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Users\EditUserRoles.g.cshtml.cs
-C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Users\Index.g.cshtml.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\BookLibrary.RazorTargetAssemblyInfo.cache
@@ -220,7 +217,12 @@ C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\BookL
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\BookLibrary.pdb
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Home\GetAuthorInfo.g.cshtml.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Home\GetBookInfo.g.cshtml.cs
-C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Book\Add.g.cshtml.cs
-C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Book\Edit.g.cshtml.cs
-C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Author\Add.g.cshtml.cs
-C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Author\Edit.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageLibrary\AddAuthor.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageLibrary\AddBook.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageLibrary\EditAuthor.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageLibrary\EditBook.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageLibrary\Index.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageUsers\EditUser.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageUsers\EditUserRoles.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageUsers\Index.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageLibrary\AuthorsList.g.cshtml.cs

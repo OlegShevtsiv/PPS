@@ -187,7 +187,7 @@ namespace DataAccess.Migrations
                     Id = table.Column<string>(nullable: false),
                     Title = table.Column<string>(nullable: true),
                     AuthorId = table.Column<string>(nullable: true),
-                    ReleaseDate = table.Column<DateTime>(nullable: false),
+                    Year = table.Column<int>(nullable: false),
                     ImagePath = table.Column<string>(nullable: true),
                     Rate = table.Column<decimal>(nullable: false),
                     Description = table.Column<string>(nullable: true),

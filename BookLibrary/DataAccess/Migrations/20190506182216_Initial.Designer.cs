@@ -52,7 +52,7 @@ namespace DataAccess.Migrations
 
                     b.Property<decimal>("Rate");
 
-                    b.Property<DateTime>("ReleaseDate");
+                    b.Property<int>("Year");
 
                     b.Property<string>("Title");
 

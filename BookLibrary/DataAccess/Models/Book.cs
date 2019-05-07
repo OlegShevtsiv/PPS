@@ -11,8 +11,7 @@ namespace DataAccess.Models
         public Author Author { get; set; }
         public string AuthorId { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime ReleaseDate { get; set; }
+        public int Year { get; set; }
 
         public string ImagePath { get; set; }
         public decimal Rate { get; set; }
@@ -21,13 +20,13 @@ namespace DataAccess.Models
 
         public Book() { }
 
-        public Book(string _id, string _title, Author _author, string _authorId, DateTime _releaseDate, string imagePath, decimal _rate, string _description, string _genres)
+        public Book(string _id, string _title, Author _author, string _authorId, int _year, string imagePath, decimal _rate, string _description, string _genres)
         {
             Id = _id;
             Title = _title;
             Author = _author;
             AuthorId = _authorId;
-            ReleaseDate = _releaseDate;
+            Year = _year;
             ImagePath = imagePath;
             Rate = _rate;
             Description = _description;

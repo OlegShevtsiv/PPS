@@ -53,10 +53,10 @@ namespace Services.Implementation
               .Get(p => p != null)
               .ToList();
 
-            if (!entities.Any())
-            {
-                throw new ObjectNotFoundException();
-            }
+            //if (!entities.Any())
+            //{
+            //    throw new ObjectNotFoundException();
+            //}
 
             return entities.Select(e => MapToDto(e));
         }
@@ -74,7 +74,7 @@ namespace Services.Implementation
 
             Author entity = MapToEntity(dto);
             Repository.Add(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
 
         public override void Remove(string id)
@@ -89,7 +89,7 @@ namespace Services.Implementation
             }
 
             Repository.Remove(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
         public override void Update(AuthorDTO dto)
         {
@@ -107,7 +107,7 @@ namespace Services.Implementation
             entity.Description = dto.Description;
 
             Repository.Update(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
 
         protected override AuthorDTO MapToDto(Author entity)

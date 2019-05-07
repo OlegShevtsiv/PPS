@@ -10,8 +10,7 @@ namespace Services.DTO
         public string Title { get; set; }
         public string AuthorId { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime ReleaseDate { get; set; }
+        public int Year { get; set; }
 
         public string ImagePath { get; set; }
         public decimal Rate { get; set; }

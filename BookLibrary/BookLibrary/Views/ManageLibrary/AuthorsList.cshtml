@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Services.DTO.AuthorDTO>
+@{
+    ViewData["Title"] = "Authors list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Authors list</h2>
+<a class="btn btn-sm btn-success" asp-action="AddAuthor">Add author</a>
+<a asp-action="Index">Books list</a>
+<table class="table">
+    <tr><th>Name</th><th>Surname</th><th></th></tr>
+    @foreach (var author in Model)
+    {
+        <tr>
+            <td>@author.Name</td>
+            <td>@author.Surname</td>
+            <td>
+                <form asp-action="DeleteAuthor" asp-route-id="@author.Id" method="post">
+                    <a class="btn btn-sm btn-primary" asp-action="EditAuthor" asp-route-id="@author.Id">Edit</a>
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

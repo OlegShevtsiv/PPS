@@ -74,7 +74,7 @@ namespace Services.Implementation
 
             Book entity = MapToEntity(dto);
             Repository.Add(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
 
         public override void Remove(string id)
@@ -89,7 +89,7 @@ namespace Services.Implementation
             }
 
             Repository.Remove(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
         public override void Update(BookDTO dto)
         {
@@ -107,11 +107,11 @@ namespace Services.Implementation
             entity.AuthorId = dto.AuthorId;
             entity.Rate = dto.Rate;
             entity.ImagePath = dto.ImagePath;
-            entity.ReleaseDate = dto.ReleaseDate;
+            entity.Year = dto.Year;
             entity.Genre = dto.Genre;
         
             Repository.Update(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
 
         protected override BookDTO MapToDto(Book entity)
@@ -128,7 +128,7 @@ namespace Services.Implementation
                 AuthorId = entity.AuthorId,
                 ImagePath = entity.ImagePath,
                 Rate = entity.Rate,
-                ReleaseDate = entity.ReleaseDate,
+                Year = entity.Year,
                 Description = entity.Description,
                 Genre = entity.Genre
             };
@@ -150,7 +150,7 @@ namespace Services.Implementation
                 AuthorId = dto.AuthorId,
                 ImagePath = dto.ImagePath,
                 Rate = dto.Rate,
-                ReleaseDate = dto.ReleaseDate,
+                Year = dto.Year,
                 Description = dto.Description,
                 Genre = dto.Genre
             };

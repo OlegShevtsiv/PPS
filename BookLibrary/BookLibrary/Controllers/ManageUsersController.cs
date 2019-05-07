@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BookLibrary.ViewModels;
+using BookLibrary.ViewModels.ManageUsers;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -11,8 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrary.Controllers
 {
-    [Authorize(Roles ="user admin")]
-    public class UsersController : Controller
+   // [Authorize(Roles ="user admin")]
+    public class ManageUsersController : Controller
     {
         UserManager<User> _userManager;
         //public UsersController(UserManager<User> userManager)
@@ -20,7 +20,7 @@ namespace BookLibrary.Controllers
         //    _userManager = userManager;
         //}
         RoleManager<IdentityRole> _roleManager;
-        public UsersController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
+        public ManageUsersController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
         {
             _roleManager = roleManager;
             _userManager = userManager;

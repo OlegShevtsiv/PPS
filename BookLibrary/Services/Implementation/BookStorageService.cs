@@ -53,10 +53,10 @@ namespace Services.Implementation
               .Get(p => p != null)
               .ToList();
 
-            if (!entities.Any())
-            {
-                throw new ObjectNotFoundException();
-            }
+            //if (!entities.Any())
+            //{
+            //    throw new ObjectNotFoundException();
+            //}
 
             return entities.Select(e => MapToDto(e));
         }
@@ -74,7 +74,7 @@ namespace Services.Implementation
 
             BookStorage entity = MapToEntity(dto);
             Repository.Add(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
 
         public override void Remove(string id)
@@ -89,7 +89,7 @@ namespace Services.Implementation
             }
 
             Repository.Remove(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
 
         public override void Update(BookStorageDTO dto)
@@ -107,7 +107,7 @@ namespace Services.Implementation
 
 
             Repository.Update(entity);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.SaveChangesAsync();
         }
 
         protected override BookStorageDTO MapToDto(BookStorage entity)

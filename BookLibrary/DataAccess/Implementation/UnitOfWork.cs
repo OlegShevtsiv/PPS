@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DataAccess.Interfaces;
+using System.Threading.Tasks;
 
 namespace DataAccess.Implementation
 {
@@ -15,9 +16,9 @@ namespace DataAccess.Implementation
             _context = context;
         }
 
-        public int SaveChanges()
+        public async Task<int> SaveChangesAsync()
         {
-            return _context.SaveChanges();
+            return await _context.SaveChangesAsync();
         }
 
         public void Dispose()

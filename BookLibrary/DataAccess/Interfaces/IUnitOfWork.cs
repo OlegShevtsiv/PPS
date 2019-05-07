@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace DataAccess.Interfaces
 {
@@ -7,6 +8,6 @@ namespace DataAccess.Interfaces
         IRepository<TEntity> GetRepository<TEntity>()
             where TEntity : class;
 
-        int SaveChanges();
+        Task<int> SaveChangesAsync();
     }
 }

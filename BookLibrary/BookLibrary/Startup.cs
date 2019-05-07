@@ -44,7 +44,7 @@ namespace BookLibrary
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<User, IdentityRole>()
-                .AddEntityFrameworkStores<LibraryContext>().AddDefaultUI();
+                .AddEntityFrameworkStores<LibraryContext>().AddDefaultUI().AddDefaultTokenProviders();
           
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
