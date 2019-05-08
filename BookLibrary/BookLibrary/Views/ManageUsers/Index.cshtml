@@ -1,24 +1,41 @@
-﻿@model IEnumerable<DataAccess.Models.User>
+﻿@using Microsoft.AspNetCore.Identity;
 @{
     ViewData["Title"] = "Users list";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@inject UserManager<User> UserManager
+@inject SignInManager<User> SignInManager
 <table class="table">
     <tr><th>Email</th><th>Name</th><th></th></tr>
-    @foreach (var user in Model)
+    @foreach (var user in UserManager.Users)
     {
         <tr>
             <td>@user.Email</td>
             <td>@user.Name</td>
             <td>
-                <form asp-action="Delete" asp-route-id="@user.Id" method="post">
-                    <a class="btn btn-sm btn-primary" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
-                    <a class="btn btn-sm btn-primary" asp-action="EditUserRoles" asp-route-userid="@user.Id">Access rights</a>
-                    <button type="submit" class="btn btn-sm btn-danger">
-                        Delete
-                    </button>
-                </form>
+                @if (await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "library admin"))
+                {
+                    if (!(await UserManager.IsInRoleAsync(user, "user admin")) || !(await UserManager.IsInRoleAsync(user, "library admin")))
+                    {
+                        <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                            <a class="btn btn-sm btn-primary" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
+                            <a class="btn btn-sm btn-primary" asp-action="EditUserRoles" asp-route-userid="@user.Id">Access rights</a>
+                            <button type="submit" class="btn btn-sm btn-danger">
+                                Delete
+                            </button>
+                        </form>
+                    }
+                }
+                else if (!(await UserManager.IsInRoleAsync(user, "user admin")))
+                {
+                    <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                        <a class="btn btn-sm btn-primary" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
+                        <a class="btn btn-sm btn-primary" asp-action="EditUserRoles" asp-route-userid="@user.Id">Access rights</a>
+                        <button type="submit" class="btn btn-sm btn-danger">
+                            Delete
+                        </button>
+                    </form>
+                }
             </td>
         </tr>
     }

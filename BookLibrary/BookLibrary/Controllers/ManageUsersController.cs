@@ -23,8 +23,7 @@ namespace BookLibrary.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
-
-        public IActionResult Index() => View(_userManager.Users.ToList());
+        public IActionResult Index() => View();
 
         public async Task<IActionResult> EditUser(string id)
         {

@@ -17,9 +17,13 @@ namespace BookLibrary.Data
             string LibraryAdminEmail = "LibAdmin@gmail.com";
             string LibraryAdminPassword = "_Aa123456LibraryAdmin";
 
+            string SuperAdminEmail = "SuperAdmin@gmail.com";
+            string SuperAdminPassword = "SuperAdmin123.";
+
+
             string UserAdminRole = "user admin";
             string LibraryAdminRole = "library admin";
-            string UresRole = "user";
+            string UserRole = "user";
             if (await roleManager.FindByNameAsync(UserAdminRole) == null)
             {
                 await roleManager.CreateAsync(new IdentityRole(UserAdminRole));
@@ -28,9 +32,9 @@ namespace BookLibrary.Data
             {
                 await roleManager.CreateAsync(new IdentityRole(LibraryAdminRole));
             }
-            if (await roleManager.FindByNameAsync(UresRole) == null)
+            if (await roleManager.FindByNameAsync(UserRole) == null)
             {
-                await roleManager.CreateAsync(new IdentityRole(UresRole));
+                await roleManager.CreateAsync(new IdentityRole(UserRole));
             }
             if (await userManager.FindByNameAsync(UserAdminEmail) == null)
             {
@@ -48,6 +52,18 @@ namespace BookLibrary.Data
                 if (result.Succeeded)
                 {
                     await userManager.AddToRoleAsync(LibraryAdmin, LibraryAdminRole);
+                }
+            }
+
+            if (await userManager.FindByNameAsync(SuperAdminEmail) == null)
+            {
+                User SuperAdmin = new User { Name = "Super Admin", Email = SuperAdminEmail, UserName = SuperAdminEmail };
+                IdentityResult result = await userManager.CreateAsync(SuperAdmin, SuperAdminPassword);
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(SuperAdmin, LibraryAdminRole);
+                    await userManager.AddToRoleAsync(SuperAdmin, UserAdminRole);
+                    await userManager.AddToRoleAsync(SuperAdmin, UserRole);
                 }
             }
         }
