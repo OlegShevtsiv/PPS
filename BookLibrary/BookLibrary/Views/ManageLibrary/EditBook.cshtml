@@ -12,12 +12,12 @@
     </div>
     <div class="form-group">
         <label class="control-label">Title</label>
-        <input type="text" asp-for="Title" class="form-control" />
+        <input type="text" asp-for="Title" class="form-control" required/>
     </div>
     <div class="form-group">
         <label class="control-label">Author</label>
 
-        <select type="text" asp-for="AuthorId" class="form-control">
+        <select type="text" asp-for="AuthorId" class="form-control" required>
             @foreach (var a in (List<AuthorDTO>)ViewBag.Authors)
             {
                 <option value="@a.Id">@a.Name @a.Surname</option>
@@ -27,19 +27,19 @@
     </div>
     <div class="form-group">
         <label class="control-label">Year</label>
-        <input type="number" asp-for="Year" class="form-control" />
+        <input type="number" asp-for="Year" class="form-control" required/>
     </div>
     <div class="form-group">
         <label class="control-label">Image</label>
-        <input type="file" asp-for="Image" class="form-control" />
+        <input type="file" asp-for="Image" class="form-control" required/>
     </div>
     <div class="form-group">
         <label class="control-label">Book file</label>
-        <input type="file" asp-for="FileBook" class="form-control" />
+        <input type="file" asp-for="FileBook" class="form-control" required/>
     </div>
     <div class="form-group">
         <label class="control-label">Genre</label>
-        <input type="text" asp-for="Genre" class="form-control" />
+        <input type="text" asp-for="Genre" class="form-control" required/>
     </div>
     <div class="form-group">
         <label class="control-label">Description</label>
@@ -47,7 +47,7 @@
     </div>
     <div class="form-group">
         <label class="control-label">Rate</label>
-        <input type="number" asp-for="Rate" class="form-control" />
+        <input type="number" asp-for="Rate" class="form-control" required/>
     </div>
     <div class="form-group">
         <input type="submit" value="Save" class="btn btn-success" />

@@ -8,6 +8,6 @@ namespace DataAccess.Interfaces
         IRepository<TEntity> GetRepository<TEntity>()
             where TEntity : class;
 
-        Task<int> SaveChangesAsync();
+        int SaveChangesAsync();
     }
 }

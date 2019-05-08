@@ -9,6 +9,9 @@ using Services.DTO;
 using BookLibrary.ViewModels.ManageLibrary;
 using System.IO;
 using Microsoft.AspNetCore.Authorization;
+using BookLibrary.Models;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 namespace BookLibrary.Controllers
 {
@@ -35,36 +38,42 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public IActionResult AddBook(AddBookViewModel model)
         {
-            if (ModelState.IsValid)
+            if (model == null)
             {
-                BookDTO newBook = new BookDTO
-                                {
-                                    Title = model.Title,
-                                    AuthorId = model.AuthorId,
-                                    Genre = model.Genre,
-                                    Rate = model.Rate,
-                                    Description = model.Description,      
-                                    Year = model.Year
-                                };
-                if (model.Image != null && model.FileBook != null)
-                {
-                    byte[] imageData = null;
-                    using (var binaryReader = new BinaryReader(model.Image.OpenReadStream()))
-                    {
-                        imageData = binaryReader.ReadBytes((int)model.Image.Length);
-                    }
-                    newBook.Image = imageData;
-
-                    byte[] fileData = null;
-                    using (var binaryReader = new BinaryReader(model.FileBook.OpenReadStream()))
-                    {
-                        fileData = binaryReader.ReadBytes((int)model.FileBook.Length);
-                    }
-                    newBook.FileBook = fileData;
-                }
-               
-                _bookService.Add(newBook);
+                return RedirectToAction("Error");
             }
+            BookDTO newBook = new BookDTO
+            {
+                Title = model.Title,
+                AuthorId = model.AuthorId,
+                Genre = model.Genre,
+                Rate = model.Rate,
+                Description = model.Description,
+                Year = model.Year
+            };
+            if (model.Image != null && model.FileBook != null)
+            {
+                byte[] imageData = null;
+                using (var binaryReader = new BinaryReader(model.Image.OpenReadStream()))
+                {
+                    imageData = binaryReader.ReadBytes((int)model.Image.Length);
+                }
+                newBook.Image = imageData;
+
+                byte[] fileData = null;
+                using (var binaryReader = new BinaryReader(model.FileBook.OpenReadStream()))
+                {
+                    fileData = binaryReader.ReadBytes((int)model.FileBook.Length);
+                }
+                newBook.FileBook = fileData;
+            }
+            else
+            {
+                return RedirectToAction("Error");
+            }
+
+            _bookService.Add(newBook);
+            
             return RedirectToAction("Index");
         }
 
@@ -117,6 +126,10 @@ namespace BookLibrary.Controllers
                     }
                     editedBook.FileBook = fileData;
                 }
+                else
+                {
+                    return RedirectToAction("Error");
+                }
 
                 _bookService.Update(editedBook);
             }
@@ -138,18 +151,15 @@ namespace BookLibrary.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddAuthor(AddAuthorViewModel model)
+        public IActionResult AddAuthor(AuthorDTO model)
         {
             if (ModelState.IsValid)
             {
-                AuthorDTO newAuthor = new AuthorDTO
+                if (model == null)
                 {
-                    Name = model.Name,
-                    Surname = model.Surname,
-                    Description = model.Description
-                };
-                // add new author
-                _authorService.Add(newAuthor);
+                    return RedirectToAction("Error");
+                }
+                _authorService.Add(model);
             }
             return RedirectToAction("AuthorsList");
         }
@@ -157,15 +167,23 @@ namespace BookLibrary.Controllers
         public IActionResult EditAuthor(string id)
         {
             AuthorDTO model = _authorService.Get(id);
+            if (model == null)
+            {
+                return RedirectToAction("Error");
+            }
             return View(model);
         }
 
         [HttpPost]
         public IActionResult EditAuthor(AuthorDTO model)
         {
-      
             if (ModelState.IsValid)
             {
+                if (model == null)
+                {
+                    return RedirectToAction("Error");
+                }
+
                 _authorService.Update(model);
             }
             return RedirectToAction("AuthorsList");
@@ -176,6 +194,12 @@ namespace BookLibrary.Controllers
         {
             _authorService.Remove(id);
             return RedirectToAction("AuthorsList");
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
     }

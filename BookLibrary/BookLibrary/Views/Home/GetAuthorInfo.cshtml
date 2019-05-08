@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Services.DTO.AuthorDTO
+@{
     ViewData["Title"] = "Get author info";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -6,44 +7,39 @@
 <div class="container pt-3 pb-4">
     <div class="row">
         <div class="col-12 col-md-5 col-lg-4 d-flex flex-column pt-3">
-            <img src="" alt="book (here must be the name of book)" class="w-100">
             <div class="book_desc">
-                <div class="h4">Author name</div>
-                <div class="h5 text-secondary">lorem</div>
-                <div class="h4">Genre</div>
-                <div class="h5 text-secondary">lorem</div>
+                
             </div>
         </div>
         <div class="col-12 col-md-7 col-lg-8 d-flex flex-column pt-3">
-            <h1>Author name</h1>
-            <a href="#">Download</a>
-            <div class="h2">Description</div>
+            <div class="h4">Author full name</div>
+            <div class="h5 text-secondary">@Model.Name @Model.Surname</div>
+            <div class="h4">Description</div>
             <p class="text-secondary">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, omnis aspernatur quidem magni consectetur quam nihil debitis sit aut culpa adipisci sequi nisi at dignissimos ratione quod, quo, quos numquam.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, omnis aspernatur quidem magni consectetur quam nihil debitis sit aut culpa adipisci sequi nisi at dignissimos ratione quod, quo, quos numquam.
+                @Model.Description
             </p>
-            <div class="more_books d-flex flex-wrap">
-                <div class="col-6 col-md-3">
-                    <a class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="col-6 col-md-3">
-                    <a class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="col-6 col-md-3">
-                    <a class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                    </a>
-                </div>
-                <div class="col-6 col-md-3">
-                    <a class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                    </a>
-                </div>
+            @*<div class="more_books d-flex flex-wrap">
+            <div class="col-6 col-md-3">
+                <a class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                </a>
             </div>
+            <div class="col-6 col-md-3">
+                <a class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                </a>
+            </div>
+        </div>*@
         </div>
     </div>
 </div>

@@ -68,10 +68,10 @@ namespace Services.Implementation
                 .Get(e => e.Id == dto.Id)
                 .SingleOrDefault();
 
-            if (checkEntity != null)
-            {
-                throw new DuplicateNameException();
-            }
+            //if (checkEntity != null)
+            //{
+            //    throw new DuplicateNameException();
+            //}
 
             Book entity = MapToEntity(dto);
             Repository.Add(entity);

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BookLibrary.Models;
 using BookLibrary.ViewModels.ManageUsers;
 using DataAccess.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -29,7 +31,7 @@ namespace BookLibrary.Controllers
             User user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
-                return NotFound();
+                return RedirectToAction("Error");
             }
             EditUserViewModel model = new EditUserViewModel { Id = user.Id, Email = user.Email, Name = user.Name };
             return View(model);
@@ -59,6 +61,10 @@ namespace BookLibrary.Controllers
                             ModelState.AddModelError(string.Empty, error.Description);
                         }
                     }
+                }
+                else
+                {
+                    return RedirectToAction("Error");
                 }
             }
             return View(model);
@@ -94,7 +100,7 @@ namespace BookLibrary.Controllers
                 return View(model);
             }
 
-            return NotFound();
+            return RedirectToAction("Error");
         }
         [HttpPost]
         public async Task<IActionResult> EditUserRoles(string userId, List<string> roles)
@@ -119,7 +125,13 @@ namespace BookLibrary.Controllers
                 return RedirectToAction("Index");
             }
 
-            return NotFound();
+            return RedirectToAction("Error");
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

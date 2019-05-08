@@ -16,9 +16,9 @@ namespace DataAccess.Implementation
             _context = context;
         }
 
-        public async Task<int> SaveChangesAsync()
+        public int SaveChangesAsync()
         {
-            return await _context.SaveChangesAsync();
+            return  _context.SaveChanges();
         }
 
         public void Dispose()
