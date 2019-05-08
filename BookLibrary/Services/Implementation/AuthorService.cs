@@ -105,6 +105,7 @@ namespace Services.Implementation
             entity.Name = dto.Name;
             entity.Surname = dto.Surname;
             entity.Description = dto.Description;
+            entity.Image = dto.Image;
 
             Repository.Update(entity);
             _unitOfWork.SaveChangesAsync();
@@ -122,7 +123,8 @@ namespace Services.Implementation
                 Id = entity.Id,
                 Name = entity.Name,
                 Surname = entity.Surname,
-                Description = entity.Description
+                Description = entity.Description,
+                Image = entity.Image
             };
 
             return dto;
@@ -140,7 +142,8 @@ namespace Services.Implementation
                 Id = dto.Id,
                 Name = dto.Name,
                 Surname = dto.Surname,
-                Description = dto.Description
+                Description = dto.Description,
+                Image = dto.Image
             };
 
             return entity;

@@ -10,7 +10,7 @@
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="Title" class="control-label"></label>
-        <input type="text" asp-for="Title" class="form-control" required/>
+        <input type="text" asp-for="Title" class="form-control" required />
     </div>
     <div class="form-group">
         <label asp-for="AuthorId" class="control-label"></label>
@@ -25,19 +25,19 @@
     </div>
     <div class="form-group">
         <label asp-for="Year" class="control-label"></label>
-        <input type="number" asp-for="Year" class="form-control" required/>
+        <input type="number" asp-for="Year" class="form-control" required />
     </div>
     <div class="form-group">
         <label asp-for="Image" class="control-label"></label>
-        <input type="file" asp-for="Image" class="form-control" required/>
+        <input type="file" asp-for="Image" class="form-control" required />
     </div>
     <div class="form-group">
         <label asp-for="FileBook" class="control-label"></label>
-        <input type="file" asp-for="FileBook" class="form-control" required/>
+        <input type="file" asp-for="FileBook" class="form-control" required />
     </div>
     <div class="form-group">
         <label asp-for="Genre" class="control-label"></label>
-        <input type="text" asp-for="Genre" class="form-control" required/>
+        <input type="text" asp-for="Genre" class="form-control" required />
     </div>
     <div class="form-group">
         <label asp-for="Description" class="control-label"></label>
@@ -45,7 +45,17 @@
     </div>
     <div class="form-group">
         <label asp-for="Rate" class="control-label"></label>
-        <input type="number" asp-for="Rate" class="form-control" required/>
+        @*<input type="number" asp-for="Rate" class="form-control" required />*@
+        <select type="number" asp-for="Rate" class="form-control" required>
+            @for (int i = 1; i <= 5; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="RatesAmount" class="control-label"></label>
+        <input type="number" asp-for="RatesAmount" class="form-control" required />
     </div>
     <div class="form-group">
         <input type="submit" value="Add" class="btn btn-success" />

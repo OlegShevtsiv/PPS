@@ -1,4 +1,4 @@
-﻿@model Services.DTO.AuthorDTO
+﻿@model BookLibrary.ViewModels.ManageLibrary.EditAuthorViewModel
 @{
     ViewData["Title"] = "Edit author";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,11 +11,15 @@
     </div>
     <div class="form-group">
         <label class="control-label">Name</label>
-        <input type="text" asp-for="Name" class="form-control" required/>
+        <input type="text" asp-for="Name" class="form-control" required />
     </div>
     <div class="form-group">
         <label class="control-label">Surname</label>
-        <input type="text" asp-for="Surname" class="form-control" required/>
+        <input type="text" asp-for="Surname" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label class="control-label">Image</label>
+        <input type="file" asp-for="Image" class="form-control" required />
     </div>
     <div class="form-group">
         <label class="control-label">Description</label>

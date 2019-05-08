@@ -17,5 +17,6 @@ namespace BookLibrary.ViewModels.ManageLibrary
         public string Genre { get; set; }
         public string Description { get; set; }
         public decimal Rate { get; set; }
+        public uint RatesAmount { get; set; }
     }
 }

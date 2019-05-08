@@ -18,10 +18,11 @@ namespace DataAccess.Models
         public decimal Rate { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }
+        public uint RatesAmount { get; set; }
 
         public Book() { }
 
-        public Book(string _id, string _title, Author _author, string _authorId, int _year, byte[] image, byte[] _fileBook, decimal _rate, string _description, string _genres)
+        public Book(string _id, string _title, Author _author, string _authorId, int _year, byte[] image, byte[] _fileBook, decimal _rate, string _description, string _genres, uint _ratesAmount)
         {
             Id = _id;
             Title = _title;
@@ -33,6 +34,7 @@ namespace DataAccess.Models
             Rate = _rate;
             Description = _description;
             Genre = _genres;
+            RatesAmount = _ratesAmount;
         }
 
         

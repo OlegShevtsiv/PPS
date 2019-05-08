@@ -111,6 +111,7 @@ namespace Services.Implementation
             entity.FileBook = dto.FileBook;
             entity.Year = dto.Year;
             entity.Genre = dto.Genre;
+            entity.RatesAmount = dto.RatesAmount;
         
             Repository.Update(entity);
             _unitOfWork.SaveChangesAsync();
@@ -133,7 +134,8 @@ namespace Services.Implementation
                 Rate = entity.Rate,
                 Year = entity.Year,
                 Description = entity.Description,
-                Genre = entity.Genre
+                Genre = entity.Genre,
+                RatesAmount = entity.RatesAmount
             };
 
             return dto;
@@ -156,7 +158,8 @@ namespace Services.Implementation
                 Rate = dto.Rate,
                 Year = dto.Year,
                 Description = dto.Description,
-                Genre = dto.Genre
+                Genre = dto.Genre,
+                RatesAmount = dto.RatesAmount
             };
 
             return entity;

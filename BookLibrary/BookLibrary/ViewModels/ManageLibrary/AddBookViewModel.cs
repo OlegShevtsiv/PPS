@@ -33,12 +33,15 @@ namespace BookLibrary.ViewModels.ManageLibrary
         [Display(Name = "Genre")]
         public string Genre { get; set; }
 
-        [Required]
         [Display(Name = "Description")]
         public string Description { get; set; }
 
         [Required]
         [Display(Name = "Initial rate")]
         public decimal Rate { get; set; }
+
+        [Required]
+        [Display(Name = "Rates amount")]
+        public uint RatesAmount { get; set; }
     }
 }

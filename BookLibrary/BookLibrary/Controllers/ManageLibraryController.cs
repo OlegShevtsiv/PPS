@@ -42,6 +42,11 @@ namespace BookLibrary.Controllers
             {
                 return RedirectToAction("Error");
             }
+            if (model.RatesAmount < 0)
+            {
+                model.RatesAmount = 0;
+                model.Rate = 0;
+            }
             BookDTO newBook = new BookDTO
             {
                 Title = model.Title,
@@ -49,7 +54,8 @@ namespace BookLibrary.Controllers
                 Genre = model.Genre,
                 Rate = model.Rate,
                 Description = model.Description,
-                Year = model.Year
+                Year = model.Year,
+                RatesAmount = model.RatesAmount
             };
             if (model.Image != null && model.FileBook != null)
             {
@@ -83,6 +89,10 @@ namespace BookLibrary.Controllers
             ViewBag.Authors = _authorService.GetAll().ToList();
 
             BookDTO getedBook = _bookService.Get(id);
+            if (getedBook == null)
+            {
+                return RedirectToAction("Error");
+            }
             EditBookViewModel model = new EditBookViewModel {
                 Id = getedBook.Id,
                 Title = getedBook.Title,
@@ -90,7 +100,8 @@ namespace BookLibrary.Controllers
                 Rate = getedBook.Rate,
                 Year = getedBook.Year,
                 Description = getedBook.Description,
-                Genre = getedBook.Genre
+                Genre = getedBook.Genre,
+                RatesAmount = getedBook.RatesAmount
             };
             return View(model);
         }
@@ -100,6 +111,15 @@ namespace BookLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (model == null)
+                {
+                    return RedirectToAction("Error");
+                }
+                if (model.RatesAmount < 0)
+                {
+                    model.RatesAmount = 0;
+                    model.Rate = 0;
+                }
                 BookDTO editedBook = new BookDTO
                 {
                     Id = model.Id,
@@ -108,7 +128,8 @@ namespace BookLibrary.Controllers
                     Genre = model.Genre,
                     Rate = model.Rate,
                     Description = model.Description,
-                    Year = model.Year
+                    Year = model.Year,
+                    RatesAmount = model.RatesAmount
                 };
                 if (model.Image != null && model.FileBook != null)
                 {
@@ -143,6 +164,8 @@ namespace BookLibrary.Controllers
             return RedirectToAction("Index");
         }
 
+
+
         public IActionResult AuthorsList() => View(_authorService.GetAll().ToList());
 
         public IActionResult AddAuthor()
@@ -151,31 +174,56 @@ namespace BookLibrary.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddAuthor(AuthorDTO model)
+        public IActionResult AddAuthor(AddAuthorViewModel model)
         {
-            if (ModelState.IsValid)
-            {
-                if (model == null)
+            
+                //if (model == null)
+                //{
+                //    return RedirectToAction("Error");
+                //}
+
+                AuthorDTO newAuthor = new AuthorDTO
+                {
+                    Name = model.Name,
+                    Description = model.Description,
+                    Surname = model.Surname
+                };
+                if (model.Image != null)
+                {
+                    byte[] imageData = null;
+                    using (var binaryReader = new BinaryReader(model.Image.OpenReadStream()))
+                    {
+                        imageData = binaryReader.ReadBytes((int)model.Image.Length);
+                    }
+                    newAuthor.Image = imageData;
+                }
+                else
                 {
                     return RedirectToAction("Error");
                 }
-                _authorService.Add(model);
-            }
+                _authorService.Add(newAuthor);
+            
             return RedirectToAction("AuthorsList");
         }
 
         public IActionResult EditAuthor(string id)
         {
-            AuthorDTO model = _authorService.Get(id);
-            if (model == null)
+            AuthorDTO getedAuthor = _authorService.Get(id);
+            if (getedAuthor == null)
             {
                 return RedirectToAction("Error");
             }
+            EditAuthorViewModel model = new EditAuthorViewModel
+            {
+                Name = getedAuthor.Name,
+                Surname = getedAuthor.Surname,
+                Description = getedAuthor.Description
+            };
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult EditAuthor(AuthorDTO model)
+        public IActionResult EditAuthor(EditAuthorViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -184,7 +232,27 @@ namespace BookLibrary.Controllers
                     return RedirectToAction("Error");
                 }
 
-                _authorService.Update(model);
+                AuthorDTO newAuthor = new AuthorDTO
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    Description = model.Description,
+                    Surname = model.Surname
+                };
+                if (model.Image != null)
+                {
+                    byte[] imageData = null;
+                    using (var binaryReader = new BinaryReader(model.Image.OpenReadStream()))
+                    {
+                        imageData = binaryReader.ReadBytes((int)model.Image.Length);
+                    }
+                    newAuthor.Image = imageData;
+                }
+                else
+                {
+                    return RedirectToAction("Error");
+                }
+                _authorService.Update(newAuthor);
             }
             return RedirectToAction("AuthorsList");
         }

@@ -1,26 +1,23 @@
 @using Microsoft.AspNetCore.Identity;
-@using DataAccess.Models;
-@using System.Linq;
-@using System.Collections.Generic;
+
 
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
-    var user = await UserManager.GetUserAsync(User);
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @user.Name!</a>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @((await UserManager.GetUserAsync(User)).Name)!</a>
             </li>
-            @if (await UserManager.IsInRoleAsync(user, "library admin"))
+            @if (await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "library admin"))
             {
             <li>
                 <a href="/ManageLibrary/Index" title="Manage">Manage Library</a>
             </li>
             }
-            @if(await UserManager.IsInRoleAsync(user, "user admin"))
+            @if(await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "user admin"))
             {
             <li>
                 <a href="/ManageUsers/Index" title="Manage">Manage users</a>

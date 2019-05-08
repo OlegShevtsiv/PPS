@@ -43,7 +43,7 @@ namespace BookLibrary.Data
             }
             if (await userManager.FindByNameAsync(LibraryAdminEmail) == null)
             {
-                User LibraryAdmin = new User { Name = "Jhon Smow UserAdmin", Email = LibraryAdminEmail, UserName = LibraryAdminEmail };
+                User LibraryAdmin = new User { Name = "Jhon Smow LibraryAdmin", Email = LibraryAdminEmail, UserName = LibraryAdminEmail };
                 IdentityResult result = await userManager.CreateAsync(LibraryAdmin, LibraryAdminPassword);
                 if (result.Succeeded)
                 {

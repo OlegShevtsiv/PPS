@@ -40,7 +40,7 @@ namespace BookLibrary.Controllers
 
         public IActionResult GetBookInfo(string id)
         {
-            
+
             BookDTO currentBook = _bookService.Get(id);
             if (currentBook == null)
             {
@@ -60,15 +60,23 @@ namespace BookLibrary.Controllers
             }
             string file_type = "application/pdf";
             string file_name = book.Title + ".pdf";
-            File(book.FileBook, file_type, file_name);
-            return RedirectToAction("Index");
+
+            return File(book.FileBook, file_type, file_name);
         }
 
-        public FileResult Download(byte[] file, string title)
+        [Authorize]
+        [HttpPost]
+        public IActionResult RateBook(BookDTO ratedBook)
         {
-            string file_type = "application/pdf";
-            string file_name = title + ".pdf";
-            return File(file, file_type, file_name);
+            BookDTO book = _bookService.Get(ratedBook.Id);
+            if (book == null)
+            {
+                return RedirectToAction("Error");
+            }
+            book.RatesAmount++;
+            book.Rate = (book.Rate + ratedBook.Rate) / book.RatesAmount;
+            _bookService.Update(book);
+            return RedirectToAction("GetBookInfo", "Home",new { id = book.Id });
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

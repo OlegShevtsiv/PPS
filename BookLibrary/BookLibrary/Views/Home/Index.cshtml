@@ -7,22 +7,24 @@
 <div class="container">
     <div class="row flex-column justify-content-between py-5">
         <div class="col-12 mt-5">
-            <form action="" class="d-flex justify-content-between">
-                <div class="form-group w-100 px-0 my-0">
+            <form asp-action="Search" class="d-flex justify-content-between">
+                <div class="form-group w-100 px-0 my-0 col-lg-6">
                     <input type="email" class="form-control w-100 rounded-0 rounded-left border-primary" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
-                <button type="submit" class="btn btn-primary rounded-0 rounded-right">Search</button>
+                <div class="col-lg-2">
+                     <button type="submit" class="btn btn-primary rounded-0 rounded-right">Search</button>
+                </div>
             </form>
         </div>
-        <div class="col-12 text-center mt-5">
+        @*<div class="col-12 text-center mt-5">
             <a href="#" class="btn btn-primary text-uppercase">Top books Authors Genres Wishlist</a>
-        </div>
+        </div>*@
     </div>
 </div>
 <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <h2>Last Releases</h2>
+                <h2>All Releases</h2>
             </div>
             @foreach (var book in Model)
             {

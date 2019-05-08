@@ -13,5 +13,6 @@
         public decimal Rate { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }
+        public uint RatesAmount { get; set; }
     }
 }
