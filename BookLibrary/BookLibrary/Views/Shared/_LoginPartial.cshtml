@@ -1,5 +1,7 @@
 @using Microsoft.AspNetCore.Identity;
 @using DataAccess.Models;
+@using System.Linq;
+@using System.Collections.Generic;
 
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
@@ -12,6 +14,18 @@
             <li>
                 <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @user.Name!</a>
             </li>
+            @if (await UserManager.IsInRoleAsync(user, "library admin"))
+            {
+            <li>
+                <a href="/ManageLibrary/Index" title="Manage">Manage Library</a>
+            </li>
+            }
+            @if(await UserManager.IsInRoleAsync(user, "user admin"))
+            {
+            <li>
+                <a href="/ManageUsers/Index" title="Manage">Manage users</a>
+            </li>
+            }
             <li>
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
             </li>

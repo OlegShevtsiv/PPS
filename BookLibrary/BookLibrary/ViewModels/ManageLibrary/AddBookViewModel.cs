@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,9 +21,13 @@ namespace BookLibrary.ViewModels.ManageLibrary
         [Display(Name = "Realese year")]
         public int Year { get; set; }
 
-       //[Required]
+        [Required]
         [Display(Name = "Image")]
-        public string ImagePath { get; set; }
+        public IFormFile Image { get; set; }
+
+        [Required]
+        [Display(Name = "Book file")]
+        public IFormFile FileBook { get; set; }
 
         [Required]
         [Display(Name = "Genre")]
@@ -33,7 +38,7 @@ namespace BookLibrary.ViewModels.ManageLibrary
         public string Description { get; set; }
 
         [Required]
-        [Display(Name = "Rate")]
+        [Display(Name = "Initial rate")]
         public decimal Rate { get; set; }
     }
 }

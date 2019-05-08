@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace Services.DTO
+﻿namespace Services.DTO
 {
     public class BookDTO
     {
@@ -12,7 +8,8 @@ namespace Services.DTO
 
         public int Year { get; set; }
 
-        public string ImagePath { get; set; }
+        public byte[] Image { get; set; }
+        public byte[] FileBook { get; set; }
         public decimal Rate { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }

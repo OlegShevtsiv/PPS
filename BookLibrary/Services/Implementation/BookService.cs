@@ -1,4 +1,5 @@
-﻿using DataAccess.Interfaces;
+﻿using DataAccess.Implementation;
+using DataAccess.Interfaces;
 using DataAccess.Models;
 using Services.DTO;
 using Services.Exceptions;
@@ -50,7 +51,7 @@ namespace Services.Implementation
         public override IEnumerable<BookDTO> GetAll()
         {
             List<Book> entities = Repository
-              .Get(p => p == null)
+              .Get(p => p != null)
               .ToList();
 
             //if (!entities.Any())
@@ -106,7 +107,8 @@ namespace Services.Implementation
             entity.Description = dto.Description;
             entity.AuthorId = dto.AuthorId;
             entity.Rate = dto.Rate;
-            entity.ImagePath = dto.ImagePath;
+            entity.Image = dto.Image;
+            entity.FileBook = dto.FileBook;
             entity.Year = dto.Year;
             entity.Genre = dto.Genre;
         
@@ -126,7 +128,8 @@ namespace Services.Implementation
                 Id = entity.Id,
                 Title = entity.Title,
                 AuthorId = entity.AuthorId,
-                ImagePath = entity.ImagePath,
+                Image = entity.Image,
+                FileBook = entity.FileBook,
                 Rate = entity.Rate,
                 Year = entity.Year,
                 Description = entity.Description,
@@ -148,7 +151,8 @@ namespace Services.Implementation
                 Id = dto.Id,
                 Title = dto.Title,
                 AuthorId = dto.AuthorId,
-                ImagePath = dto.ImagePath,
+                Image = dto.Image,
+                FileBook = dto.FileBook,    
                 Rate = dto.Rate,
                 Year = dto.Year,
                 Description = dto.Description,

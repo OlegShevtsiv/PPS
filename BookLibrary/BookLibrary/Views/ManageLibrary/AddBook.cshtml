@@ -1,11 +1,12 @@
 ﻿@model BookLibrary.ViewModels.ManageLibrary.AddBookViewModel
-
 @{
     ViewData["Title"] = "Add new book";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using Services.DTO
+
 <h2>Adding new book</h2>
-<form asp-action="AddBook" asp-controller="ManageLibrary" method="post">
+<form asp-action="AddBook" asp-controller="ManageLibrary" method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All" class="text-danger"></div>
     <div class="form-group">
         <label asp-for="Title" class="control-label"></label>
@@ -13,15 +14,26 @@
     </div>
     <div class="form-group">
         <label asp-for="AuthorId" class="control-label"></label>
-        <input type="text" asp-for="AuthorId" class="form-control" />
+
+        <select type="text" asp-for="AuthorId" class="form-control">
+            @foreach (var a in (List<AuthorDTO>)ViewBag.Authors)
+            {
+                <option value="@a.Id">@a.Name @a.Surname</option>
+            }
+        </select>
+        <a class="btn btn-sm btn-success" asp-action="AddAuthor">Add new author</a>
     </div>
     <div class="form-group">
         <label asp-for="Year" class="control-label"></label>
         <input type="number" asp-for="Year" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="ImagePath" class="control-label"></label>
-        <input type="text" asp-for="ImagePath" class="form-control" />
+        <label asp-for="Image" class="control-label"></label>
+        <input type="file" asp-for="Image" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="FileBook" class="control-label"></label>
+        <input type="file" asp-for="FileBook" class="form-control" />
     </div>
     <div class="form-group">
         <label asp-for="Genre" class="control-label"></label>
@@ -29,7 +41,7 @@
     </div>
     <div class="form-group">
         <label asp-for="Description" class="control-label"></label>
-        <input type="text" asp-for="Description" class="form-control" />
+        <textarea type="text" asp-for="Description" class="form-control"></textarea>
     </div>
     <div class="form-group">
         <label asp-for="Rate" class="control-label"></label>

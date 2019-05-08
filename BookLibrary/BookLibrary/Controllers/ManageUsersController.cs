@@ -11,14 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookLibrary.Controllers
 {
-   // [Authorize(Roles ="user admin")]
+    [Authorize(Roles = "user admin")]
     public class ManageUsersController : Controller
     {
         UserManager<User> _userManager;
-        //public UsersController(UserManager<User> userManager)
-        //{
-        //    _userManager = userManager;
-        //}
         RoleManager<IdentityRole> _roleManager;
         public ManageUsersController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
         {

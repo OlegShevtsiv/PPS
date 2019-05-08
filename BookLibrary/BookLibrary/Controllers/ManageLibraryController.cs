@@ -7,9 +7,12 @@ using Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Services.DTO;
 using BookLibrary.ViewModels.ManageLibrary;
+using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookLibrary.Controllers
 {
+    [Authorize(Roles = "library admin")]
     public class ManageLibraryController : Controller
     {
         private readonly IBookService _bookService;
@@ -21,13 +24,11 @@ namespace BookLibrary.Controllers
 
         }
 
-        public IActionResult Index()
-        {
-            return View(_bookService.GetAll().ToList());
-        }
+        public IActionResult Index() => View(_bookService.GetAll().ToList());
 
         public IActionResult AddBook()
         {
+            ViewBag.Authors = _authorService.GetAll().ToList();
             return View();
         }
 
@@ -36,24 +37,91 @@ namespace BookLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-                BookDTO newBook = new BookDTO {
-                    Title = model.Title,
-                    AuthorId = model.AuthorId,
-                    Genre = model.Genre,
-                    Rate = model.Rate,
-                    Description = model.Description,
-                    ImagePath = model.ImagePath,
-                    Year = model.Year };
-                // add new book
+                BookDTO newBook = new BookDTO
+                                {
+                                    Title = model.Title,
+                                    AuthorId = model.AuthorId,
+                                    Genre = model.Genre,
+                                    Rate = model.Rate,
+                                    Description = model.Description,      
+                                    Year = model.Year
+                                };
+                if (model.Image != null && model.FileBook != null)
+                {
+                    byte[] imageData = null;
+                    using (var binaryReader = new BinaryReader(model.Image.OpenReadStream()))
+                    {
+                        imageData = binaryReader.ReadBytes((int)model.Image.Length);
+                    }
+                    newBook.Image = imageData;
+
+                    byte[] fileData = null;
+                    using (var binaryReader = new BinaryReader(model.FileBook.OpenReadStream()))
+                    {
+                        fileData = binaryReader.ReadBytes((int)model.FileBook.Length);
+                    }
+                    newBook.FileBook = fileData;
+                }
+               
                 _bookService.Add(newBook);
             }
             return RedirectToAction("Index");
         }
 
-        //public IActionResult EditBook()
-        //{
-        //    return View();
-        //}
+        [HttpGet]
+        public IActionResult EditBook(string id)
+        {
+            ViewBag.Authors = _authorService.GetAll().ToList();
+
+            BookDTO getedBook = _bookService.Get(id);
+            EditBookViewModel model = new EditBookViewModel {
+                Id = getedBook.Id,
+                Title = getedBook.Title,
+                AuthorId = getedBook.AuthorId,
+                Rate = getedBook.Rate,
+                Year = getedBook.Year,
+                Description = getedBook.Description,
+                Genre = getedBook.Genre
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult EditBook(EditBookViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                BookDTO editedBook = new BookDTO
+                {
+                    Id = model.Id,
+                    Title = model.Title,
+                    AuthorId = model.AuthorId,
+                    Genre = model.Genre,
+                    Rate = model.Rate,
+                    Description = model.Description,
+                    Year = model.Year
+                };
+                if (model.Image != null && model.FileBook != null)
+                {
+                    byte[] imageData = null;
+                    using (var binaryReader = new BinaryReader(model.Image.OpenReadStream()))
+                    {
+                        imageData = binaryReader.ReadBytes((int)model.Image.Length);
+                    }
+                    editedBook.Image = imageData;
+
+                    byte[] fileData = null;
+                    using (var binaryReader = new BinaryReader(model.FileBook.OpenReadStream()))
+                    {
+                        fileData = binaryReader.ReadBytes((int)model.FileBook.Length);
+                    }
+                    editedBook.FileBook = fileData;
+                }
+
+                _bookService.Update(editedBook);
+            }
+            return RedirectToAction("Index");
+        }
 
         [HttpPost]
         public IActionResult DeleteBook(string id)
@@ -62,15 +130,7 @@ namespace BookLibrary.Controllers
             return RedirectToAction("Index");
         }
 
-        //[HttpPost]
-        //public IActionResult EditBook()
-        //{
-        //    return View();
-        //}
-
         public IActionResult AuthorsList() => View(_authorService.GetAll().ToList());
-
-
 
         public IActionResult AddAuthor()
         {
@@ -94,17 +154,22 @@ namespace BookLibrary.Controllers
             return RedirectToAction("AuthorsList");
         }
 
-        //public IActionResult EditAuthor()
-        //{
-        //    return View();
-        //}
+        public IActionResult EditAuthor(string id)
+        {
+            AuthorDTO model = _authorService.Get(id);
+            return View(model);
+        }
 
-
-        //[HttpPost]
-        //public IActionResult EditAuthor()
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public IActionResult EditAuthor(AuthorDTO model)
+        {
+      
+            if (ModelState.IsValid)
+            {
+                _authorService.Update(model);
+            }
+            return RedirectToAction("AuthorsList");
+        }
 
         [HttpPost]
         public IActionResult DeleteAuthor(string id)
