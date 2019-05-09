@@ -76,7 +76,7 @@ using DataAccess;
             WriteLiteral("\r\n<div class=\"container\">\r\n    <div class=\"row flex-column justify-content-between py-5\">\r\n        <div class=\"col-12 mt-5\">\r\n            ");
             EndContext();
             BeginContext(272, 508, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4486cdfb64d64d0d811d6fd4b488e814", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1dba7943457c471480a76e59ed90d028", async() => {
                 BeginContext(337, 436, true);
                 WriteLiteral(@"
                 <div class=""form-group w-100 px-0 my-0 col-lg-6"">
@@ -179,7 +179,7 @@ WriteAttributeValue("", 1504, Convert.ToBase64String(book.Image), 1504, 37, fals
             WriteLiteral("</h6>\r\n                            ");
             EndContext();
             BeginContext(1871, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65c64123960049dfa1c8f33d132c1b2a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70887ed65ef5409ebd84ebe08e1e60a1", async() => {
                 BeginContext(1954, 4, true);
                 WriteLiteral("More");
                 EndContext();

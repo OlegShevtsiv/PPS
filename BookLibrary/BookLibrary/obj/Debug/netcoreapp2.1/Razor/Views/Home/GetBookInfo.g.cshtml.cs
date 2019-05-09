@@ -121,7 +121,7 @@ WriteAttributeValue("", 498, Convert.ToBase64String(@Model.Image), 498, 39, fals
             WriteLiteral(" />\r\n            <div class=\"book_desc\">\r\n                <div class=\"h4\">Author</div>\r\n                <div class=\"h4 text-secondary\">\r\n                    ");
             EndContext();
             BeginContext(695, 169, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3e9cbaffb2d64890b5d679b797558c83", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07f36dd81ae64f9598f5426b3d6e2565", async() => {
                 BeginContext(779, 38, false);
 #line 19 "C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\Views\Home\GetBookInfo.cshtml"
                                                                                                   Write(authorService.Get(Model.AuthorId).Name);
@@ -200,12 +200,12 @@ WriteAttributeValue("", 498, Convert.ToBase64String(@Model.Image), 498, 39, fals
             WriteLiteral("</div>\r\n\r\n                ");
             EndContext();
             BeginContext(1257, 789, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d48a0f812cc14cf8a7aeab610b3c5b05", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e004df0b81e8414b8614c215c4a35213", async() => {
                 BeginContext(1321, 72, true);
                 WriteLiteral("\r\n                    <div class=\"form-group\">\r\n                        ");
                 EndContext();
                 BeginContext(1393, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "78189ef08fef46ef9c72fe519ad57d6e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0f51a8d737eb46a8be12ff4fba0629ab", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -230,7 +230,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        ");
                 EndContext();
                 BeginContext(1529, 299, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60f52545a3a9433cb368535ba4393b98", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87ffd5a36e0c4bc4ad117a83b1f71ac2", async() => {
                     BeginContext(1608, 2, true);
                     WriteLiteral("\r\n");
                     EndContext();
@@ -244,7 +244,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                     WriteLiteral("                                ");
                     EndContext();
                     BeginContext(1732, 30, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fa4d141a85848a197c53b9c72b7e370", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74c43c1b402e41c39c7f82068998072e", async() => {
                         BeginContext(1752, 1, false);
 #line 37 "C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\Views\Home\GetBookInfo.cshtml"
                                               Write(i);
@@ -342,7 +342,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_SelectTagHelper.For = ModelExpressionProvi
             WriteLiteral("</h1>\r\n            ");
             EndContext();
             BeginContext(2203, 66, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e5add1cb38ec47c6aea49b20c6a108bc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1fa578a25b3419bb9c874d204936797", async() => {
                 BeginContext(2257, 8, true);
                 WriteLiteral("Download");
                 EndContext();
