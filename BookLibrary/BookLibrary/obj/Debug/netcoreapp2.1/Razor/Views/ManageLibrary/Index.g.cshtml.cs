@@ -79,7 +79,7 @@ using DataAccess;
             WriteLiteral("\r\n<h2>Books List</h2>\r\n");
             EndContext();
             BeginContext(158, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "631bb64b7653417eb874c8aacbb66e07", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2ff5d57a28a74b6c863da5a42ba5a03e", async() => {
                 BeginContext(213, 8, true);
                 WriteLiteral("Add book");
                 EndContext();
@@ -102,7 +102,7 @@ using DataAccess;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(227, 44, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0affa10b82844ca6b26f46d8b1c31b16", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce87cf5de9714ff68bc91e0f179e7832", async() => {
                 BeginContext(255, 12, true);
                 WriteLiteral("Authors list");
                 EndContext();
@@ -153,12 +153,12 @@ using DataAccess;
             WriteLiteral("</td>\r\n            <td>\r\n                ");
             EndContext();
             BeginContext(503, 340, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5f1d02f146284815ba0c2b4e183f6192", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62aab485227d4383a38ae02c796e741d", async() => {
                 BeginContext(571, 22, true);
                 WriteLiteral("\r\n                    ");
                 EndContext();
                 BeginContext(593, 88, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca76bc4d0dbb48ffbfa845f69504a84a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f870b886b714816a1886c60804a4f73", async() => {
                     BeginContext(673, 4, true);
                     WriteLiteral("Edit");
                     EndContext();
