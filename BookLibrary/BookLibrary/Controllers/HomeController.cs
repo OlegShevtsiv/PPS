@@ -16,10 +16,13 @@ namespace BookLibrary.Controllers
     {
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
-        public HomeController(IBookService bookService, IAuthorService authorService)
+        private readonly ICommentService _commentService;
+
+        public HomeController(IBookService bookService, IAuthorService authorService, ICommentService commentService)
         {
             _bookService = bookService;
             _authorService = authorService;
+            _commentService = commentService;
         }
 
         public IActionResult Index()
@@ -29,6 +32,10 @@ namespace BookLibrary.Controllers
 
         public IActionResult GetAuthorInfo(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                RedirectToAction("Error");
+            }
             AuthorDTO currentAuthor = _authorService.Get(id);
             if (currentAuthor == null)
             {
@@ -40,7 +47,10 @@ namespace BookLibrary.Controllers
 
         public IActionResult GetBookInfo(string id)
         {
-
+            if (string.IsNullOrEmpty(id))
+            {
+                RedirectToAction("Error");
+            }
             BookDTO currentBook = _bookService.Get(id);
             if (currentBook == null)
             {
@@ -52,6 +62,10 @@ namespace BookLibrary.Controllers
         [Authorize]
         public IActionResult DownloadBook(string id)
         {
+            if (string.IsNullOrEmpty(id))
+            {
+                RedirectToAction("Error");
+            }
             BookDTO book = _bookService.Get(id);
             if (book == null)
             {
@@ -67,7 +81,6 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public IActionResult RateBook(BookDTO ratedBook)
         {
-
             BookDTO book = _bookService.Get(ratedBook.Id);
             if (book == null)
             {
@@ -78,7 +91,26 @@ namespace BookLibrary.Controllers
             book.Rate = (book.Rate * amount + ratedBook.Rate) / book.RatesAmount;
             
             _bookService.Update(book);
-            return RedirectToAction("GetBookInfo", "Home",new { id = book.Id });
+            return RedirectToAction("GetBookInfo", "Home", new { id = book.Id });
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult CommentBook(string ownerId, string bookId, string text)
+        {
+            if (string.IsNullOrEmpty(ownerId) || string.IsNullOrEmpty(bookId) || string.IsNullOrEmpty(text))
+            {
+                RedirectToAction("Error");
+            }
+            CommentDTO newComment = new CommentDTO
+            {
+                OwnerId = ownerId,
+                CommentedEssenceId = bookId,
+                Text = text
+            };
+            _commentService.Add(newComment);
+            //return PartialView("CommentPartial", bookId);
+            return RedirectToAction("GetBookInfo", "Home", new { id = bookId});
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,0 +1,80 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Services.Interfaces;
+@using Services.Filters;
+
+@inject IAuthorService authorService
+@inject ICommentService commentServive
+@inject UserManager<User> UserManager
+@inject SignInManager<User> SignInManager
+
+
+@model string
+<hr style="border-width: 2px; border-color: grey;" />
+<h4>Add your comment</h4>
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="CommentBook" asp-controller="Home" method="post">
+                <div class="form-group">
+                    <input type="hidden" name="ownerId" value="@((await UserManager.GetUserAsync(User)).Id)" />
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="bookId" value="@Model" />
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="text" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Comment" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="CommentBook" asp-controller="Home" method="post">
+                <div class="form-group">
+                    <textarea class="form-control" disabled></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Comment" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
+<hr style="border-width: 2px; border-color: grey;" />
+<h3>All Comments</h3>
+@foreach (var c in commentServive.Get(new CommentFilter { CommentedEssenceId = Model }).OrderBy(c => c.Text))
+{
+    <div class="row">
+        <div class="col-md-10">
+            @if ((SignInManager.IsSignedIn(User)) && ((await UserManager.GetUserAsync(User)).Id == c.OwnerId))
+            {
+                <p style="text-align:right;">
+                    <b><ins>@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins></b>
+                </p>
+            }
+            else
+            {
+                @if ((await UserManager.IsInRoleAsync((UserManager.Users.First(u => u.Id == c.OwnerId)), "user admin")) ||
+                (await UserManager.IsInRoleAsync((UserManager.Users.First(u => u.Id == c.OwnerId)), "library admin")))
+                {
+                    <p style="color: red"><ins style="color:black">@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins> Admin</p>
+                }
+                else
+                {
+                    <p><ins>@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins></p>
+                }
+            }
+            <div class="form-group">
+                <p class="form-control">@c.Text</p>
+            </div>
+        </div>
+    </div>
+}

@@ -226,3 +226,4 @@ C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageUsers\EditUserRoles.g.cshtml.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageUsers\Index.g.cshtml.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageLibrary\AuthorsList.g.cshtml.cs
+C:\Users\Admin\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Home\CommentPartial.g.cshtml.cs

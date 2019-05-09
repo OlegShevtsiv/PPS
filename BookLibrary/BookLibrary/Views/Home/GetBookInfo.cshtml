@@ -1,10 +1,14 @@
-﻿@using Services.Interfaces;
+﻿@using Microsoft.AspNetCore.Identity;
+@using Services.Interfaces;
+
 @model Services.DTO.BookDTO
 @{
     ViewData["Title"] = "Get book info";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @inject IAuthorService authorService
+
 <div class="container pt-3 pb-4">
     <div class="row py-5">
         <div class="col-12 col-md-5 col-lg-4 d-flex flex-column pt-3">
@@ -14,7 +18,7 @@
                 <div class="h4 text-secondary">
                     <a asp-action="GetAuthorInfo" asp-route-id="@authorService.Get(Model.AuthorId).Id">@authorService.Get(Model.AuthorId).Name @authorService.Get(Model.AuthorId).Surname</a>
                 </div>
-                
+
                 <div class="h4">Genre</div>
                 <div class="h5 text-secondary">@Model.Genre</div>
                 <div class="h4">Rate</div>
@@ -35,42 +39,19 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="submit" onClick="this.style.visibility= 'hidden';" value="Rate Book" class="btn btn-success" />
+                        <input type="submit" value="Rate Book" class="btn btn-success" />
                     </div>
                 </form>
             </div>
         </div>
         <div class="col-12 col-md-7 col-lg-8 d-flex flex-column pt-3">
             <h1>@Model.Title</h1>
-            @if (Model.FileBook == null)
-            {<p>qwerty</p>}
             <a asp-action="DownloadBook" asp-route-id="@Model.Id">Download</a>
             <div class="h2">Description</div>
             <p class="text-secondary">@Model.Description</p>
-
-            @*<div class="more_books d-flex flex-wrap">
-                    <div class="col-6 col-md-3">
-                        <a class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <a class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <a class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <a class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                        </a>
-                    </div>
-                </div>*@
         </div>
     </div>
+    @{await Html.RenderPartialAsync("CommentPartial", Model.Id);}
+
 </div>
 

@@ -31,7 +31,6 @@ namespace BookLibrary.Controllers
 
         public IActionResult AddBook()
         {
-            //ViewBag.Authors = _authorService.GetAll().ToList();
             return View();
         }
 

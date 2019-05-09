@@ -27,7 +27,7 @@ namespace Services.Implementation
 
             if (entity == null)
             {
-                throw new ObjectNotFoundException();
+                return new BookDTO();
             }
 
             return MapToDto(entity);
@@ -42,7 +42,7 @@ namespace Services.Implementation
 
             if (!entities.Any())
             {
-                throw new ObjectNotFoundException();
+                return new List<BookDTO>();
             }
 
             return entities.Select(e => MapToDto(e));
@@ -56,10 +56,10 @@ namespace Services.Implementation
               .Get(p => p != null)
               .ToList();
 
-            //if (!entities.Any())
-            //{
-            //    throw new ObjectNotFoundException();
-            //}
+            if (!entities.Any())
+            {
+                return new List<BookDTO>();
+            }
 
             return entities.Select(e => MapToDto(e));
         }
@@ -70,10 +70,10 @@ namespace Services.Implementation
                 .Get(e => e.Id == dto.Id)
                 .SingleOrDefault();
 
-            //if (checkEntity != null)
-            //{
-            //    throw new DuplicateNameException();
-            //}
+            if (checkEntity != null)
+            {
+                throw new DuplicateNameException();
+            }
 
             Book entity = MapToEntity(dto);
             Repository.Add(entity);

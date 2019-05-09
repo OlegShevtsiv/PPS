@@ -2,6 +2,6 @@
 {
     public class CommentFilter: IFilter
     {
-        public string OwnerId { get; set; }
+        public string CommentedEssenceId { get; set; }
     }
 }

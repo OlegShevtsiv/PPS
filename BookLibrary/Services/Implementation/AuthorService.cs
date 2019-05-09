@@ -26,7 +26,7 @@ namespace Services.Implementation
 
             if (entity == null)
             {
-                throw new ObjectNotFoundException();
+                return new AuthorDTO();
             }
 
             return MapToDto(entity);
@@ -41,7 +41,7 @@ namespace Services.Implementation
 
             if (!entities.Any())
             {
-                throw new ObjectNotFoundException();
+                return new List<AuthorDTO>();
             }
 
             return entities.Select(e => MapToDto(e));
@@ -53,10 +53,10 @@ namespace Services.Implementation
               .Get(p => p != null)
               .ToList();
 
-            //if (!entities.Any())
-            //{
-            //    throw new ObjectNotFoundException();
-            //}
+            if (!entities.Any())
+            {
+                return new List<AuthorDTO>();
+            }
 
             return entities.Select(e => MapToDto(e));
         }

@@ -208,7 +208,7 @@ WriteAttributeValue("", 1507, Convert.ToBase64String(book.Image), 1507, 37, fals
             WriteLiteral("</h6>\r\n                                ");
             EndContext();
             BeginContext(1898, 91, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87bb2f7676c44471af10392d4080bd4b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0e235f36dd6849af9e3cd1549385be58", async() => {
                 BeginContext(1981, 4, true);
                 WriteLiteral("More");
                 EndContext();

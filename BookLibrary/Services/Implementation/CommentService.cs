@@ -26,7 +26,7 @@ namespace Services.Implementation
 
             if (entity == null)
             {
-                throw new ObjectNotFoundException();
+                return new CommentDTO();
             }
 
             return MapToDto(entity);
@@ -41,7 +41,7 @@ namespace Services.Implementation
 
             if (!entities.Any())
             {
-                throw new ObjectNotFoundException();
+                return new List<CommentDTO>();
             }
 
             return entities.Select(e => MapToDto(e));
@@ -53,10 +53,10 @@ namespace Services.Implementation
               .Get(p => p != null)
               .ToList();
 
-            //if (!entities.Any())
-            //{
-            //    throw new ObjectNotFoundException();
-            //}
+            if (!entities.Any())
+            {
+                return new List<CommentDTO>();
+            }
 
             return entities.Select(e => MapToDto(e));
         }
@@ -152,12 +152,18 @@ namespace Services.Implementation
             Func<Comment, bool> result = e => true;
             if (filter is CommentFilter)
             {
-                if (!String.IsNullOrEmpty((filter as CommentFilter)?.OwnerId))
+                if (!String.IsNullOrEmpty((filter as CommentFilter)?.CommentedEssenceId))
                 {
-                    result += e => e.OwnerId == (filter as CommentFilter).OwnerId;
+                    result += e => e.CommentedEssenceId == (filter as CommentFilter).CommentedEssenceId;
                 }
             }
-
+            else if (filter is CommentFilterByOwnerId)
+            {
+                if (!String.IsNullOrEmpty((filter as CommentFilterByOwnerId)?.OwnerId))
+                {
+                    result += e => e.OwnerId == (filter as CommentFilterByOwnerId).OwnerId;
+                }
+            }
             return result;
         }
     }
