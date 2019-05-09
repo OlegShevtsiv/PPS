@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Github\\PPS\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj": {}
+    "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj": {
+    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\obj\\",
+        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
+        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,21 +43,21 @@
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.0.1, )"
+              "version": "[2.1.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.1.4, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -74,34 +74,34 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Github\\PPS\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj": {
+    "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Github\\PPS\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
+        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
         "projectName": "DataAccess.Tests",
-        "projectPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\Tests\\DataAccess.Tests\\obj\\",
+        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
+        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
+        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.2"
+          "netcoreapp2.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.2": {
+          "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj"
+              "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -113,16 +113,15 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.2": {
+        "netcoreapp2.1": {
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[15.9.0, )"
             },
             "Microsoft.NETCore.App": {
-              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.0, )",
+              "version": "[2.1.0, )",
               "autoReferenced": true
             },
             "xunit": {
