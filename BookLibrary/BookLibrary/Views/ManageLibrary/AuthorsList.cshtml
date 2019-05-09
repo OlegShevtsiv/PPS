@@ -4,24 +4,36 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Authors list</h2>
-<a class="btn btn-sm btn-success" asp-action="AddAuthor">Add author</a>
-<a asp-action="Index">Books list</a>
-<table class="table">
-    <tr><th>Name</th><th>Surname</th><th></th></tr>
-    @foreach (var author in Model)
-    {
-        <tr>
-            <td>@author.Name</td>
-            <td>@author.Surname</td>
-            <td>
-                <form asp-action="DeleteAuthor" asp-route-id="@author.Id" method="post">
-                    <a class="btn btn-sm btn-primary" asp-action="EditAuthor" asp-route-id="@author.Id">Edit</a>
-                    <button type="submit" class="btn btn-sm btn-danger">
-                        Delete
-                    </button>
-                </form>
-            </td>
-        </tr>
-    }
+<h2 class="mt-5">Authors list</h2>
+<a class="btn btn-lg btn-success" asp-action="AddAuthor">Add author</a>
+<a class="btn btn-lg btn-success" asp-action="Index">Books list</a>
+<table class="table mt-5">
+    <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Surname</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var author in Model)
+            {
+                int i = 0;
+                i += 1;
+            <tr>
+                <th scope="row">@i</th>
+                <td>@author.Name</td>
+                <td>@author.Surname</td>
+                <td class="d-flex justify-content-end">
+                    <form asp-action="DeleteAuthor" asp-route-id="@author.Id" method="post">
+                        <a class="btn btn-lg btn-primary" asp-action="EditAuthor" asp-route-id="@author.Id">Edit</a>
+                        <button type="submit" class="btn btn-danger btn-lg">
+                            Delete
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            }
+  
 </table>

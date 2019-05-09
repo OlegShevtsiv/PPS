@@ -11,47 +11,65 @@
 
 <div class="container pt-3 pb-4">
     <div class="row py-5">
-        <div class="col-12 col-md-5 col-lg-4 d-flex flex-column pt-3">
-            <img class="card-img-top w-100" alt="@Model.Title" style="width:240px; height:300px;" src="data:image/jpeg;base64,@(Convert.ToBase64String(@Model.Image))" />
-            <div class="book_desc">
-                <div class="h4">Author</div>
-                <div class="h4 text-secondary">
+        <div class="col-12 col-md-4 d-flex flex-column pt-3">
+            <img class="w-100" alt="@Model.Title" src="data:image/jpeg;base64,@(Convert.ToBase64String(@Model.Image))" />
+        </div>
+        <div class="col-12 col-md-5 d-flex flex-column pt-3">
+            <div class="d-flex">
+                <h1 class="pr-3">@Model.Title</h1>
+                <div>
+                    <a asp-action="DownloadBook" asp-route-id="@Model.Id" class="btn btn-primary btn-lg">Download</a>
+                </div>
+            </div>
+                <div class="h2">Description:</div>
+                <p class="text-secondary">@Model.Description</p>
+            </div>
+        <div class="col-12 col-md-3">
+            <div class="book_desc d-flex">
+                <div class="h2 text-bold pr-3">Author</div>
+                <div class="h3">
                     <a asp-action="GetAuthorInfo" asp-route-id="@authorService.Get(Model.AuthorId).Id">@authorService.Get(Model.AuthorId).Name @authorService.Get(Model.AuthorId).Surname</a>
                 </div>
-
-                <div class="h4">Genre</div>
-                <div class="h5 text-secondary">@Model.Genre</div>
-                <div class="h4">Rate</div>
-                <div class="h5 text-secondary">@Model.Rate</div>
-                <div class="h4">Rates amount</div>
-                <div class="h5 text-secondary">@Model.RatesAmount</div>
-
-                <form asp-action="RateBook" asp-controller="Home" method="post">
-                    <div class="form-group">
-                        <input type="hidden" asp-for="Id" />
-                    </div>
-                    <div class="form-group">
-                        <select type="number" asp-for="Rate" class="form-control" style="width: 100px">
-                            @for (int i = 1; i <= 5; i++)
-                            {
-                                <option value="@i">@i</option>
-                            }
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Rate Book" class="btn btn-success" />
-                    </div>
-                </form>
             </div>
+            <div class="d-flex">
+                <div class="h2 pr-3">Genre:</div>
+                <div class="h2 text-secondary">@Model.Genre</div>
+            </div>
+            <div class="d-flex">
+                <div class="h2 pr-3">Rate:</div>
+                <div class="h2 text-secondary">@Model.Rate</div>
+            </div>
+            <div class="d-flex">
+                <div class="h2 pr-3">Rates amount:</div>
+                <div class="h2 text-secondary">@Model.RatesAmount</div>
+            </div>
+
+            <form asp-action="RateBook" asp-controller="Home" method="post" class="d-flex">
+                <div class="form-group">
+                    <input type="hidden" asp-for="Id" />
+                </div>
+                <div class="form-group pt-3">
+                    <select type="number" asp-for="Rate" class="form-control form-control-lg rate-select">
+                        @for (int i = 1; i <= 5; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group mb-0 d-flex align-items-center ml-3">
+                    <input type="submit" value="Rate Book" class="btn btn-success btn-lg" />
+                </div>
+            </form>
         </div>
-        <div class="col-12 col-md-7 col-lg-8 d-flex flex-column pt-3">
-            <h1>@Model.Title</h1>
-            <a asp-action="DownloadBook" asp-route-id="@Model.Id">Download</a>
-            <div class="h2">Description</div>
-            <p class="text-secondary">@Model.Description</p>
+        <div class="col-12">
+
+
+            @{await Html.RenderPartialAsync("CommentPartial", Model.Id);}
+
         </div>
+        </div>
+        
     </div>
-    @{await Html.RenderPartialAsync("CommentPartial", Model.Id);}
 
 </div>
 

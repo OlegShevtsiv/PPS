@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Changing roles for user @Model.UserEmail</h2>
+<h2 class="mt-5">Changing roles for user @Model.UserEmail</h2>
 
 <form asp-action="EditUserRoles" method="post">
     <input type="hidden" name="userId" value="@Model.UserId" />
@@ -19,12 +19,18 @@
     <div class="form-group">
         @foreach (IdentityRole role in Model.AllRoles)
         {
-        <label class="container">
-            <input type="radio" name="roles" value="@role.Name"
-                   @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "")>@role.Name
-                <span class="checkmark"></span>
-            </label>
-        }
+        <div class="d-flex">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white border-0">
+                    <input type="radio" name="roles" value="@role.Name"
+                           @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "")>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+            <label class="pl-3 h2 m-0">@role.Name</label>
+            </div>
+            }
     </div>
-    <button type="submit" class="btn btn-success">Save</button>
+    <button type="submit" class="btn btn-success btn-lg">Save</button>
 </form>

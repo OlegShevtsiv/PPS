@@ -3,9 +3,9 @@
     ViewData["Title"] = "Edit author";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Author editing</h2>
+<h2 class="mt-5">Author editing</h2>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="EditAuthor" asp-controller="ManageLibrary" method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
@@ -13,22 +13,22 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Name</label>
-                <input type="text" asp-for="Name" class="form-control" required />
+                <input type="text" asp-for="Name" class="form-control form-control-lg" required />
             </div>
             <div class="form-group">
                 <label class="control-label">Surname</label>
-                <input type="text" asp-for="Surname" class="form-control" required />
+                <input type="text" asp-for="Surname" class="form-control form-control-lg" required />
             </div>
             <div class="form-group">
                 <label class="control-label">Image</label>
-                <input type="file" asp-for="Image" class="form-control" required />
+                <input type="file" asp-for="Image" class="form-control form-control-lg" required />
             </div>
             <div class="form-group">
                 <label class="control-label">Description</label>
-                <textarea type="text" asp-for="Description" class="form-control"></textarea>
+                <textarea type="text" asp-for="Description" class="form-control form-control-lg"></textarea>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-success" />
+                <input type="submit" value="Save" class="btn btn-success btn-lg" />
             </div>
         </form>
 

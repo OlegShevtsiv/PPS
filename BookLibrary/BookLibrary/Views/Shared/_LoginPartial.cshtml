@@ -5,33 +5,33 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
-    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @((await UserManager.GetUserAsync(User)).Name)!</a>
-            </li>
+    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto mr-md-0">
             @if (await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "library admin"))
             {
-                <li>
-                    <a href="/ManageLibrary/Index" title="Manage">Manage Library</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ManageLibrary/Index" title="Manage">Manage Library</a>
                 </li>
             }
-            @if(await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "user admin"))
+            @if (await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "user admin"))
             {
-                <li>
-                    <a href="/ManageUsers/Index" title="Manage">Manage users</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ManageUsers/Index" title="Manage">Manage users</a>
                 </li>
             }
-            <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+            <li class="nav-item">
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="nav-link text-white">Hello @((await UserManager.GetUserAsync(User)).Name)!</a>
+            </li>
+            <li class="nav-item d-flex flex-column justify-content-center pl-2">
+                <button type="submit" class="btn btn-primary btn-lg">Logout</button>
             </li>
         </ul>
     </form>
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
-        <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+    <ul class="navbar-nav mx-auto mr-md-0">
+        <li class="nav-item"><a asp-area="Identity" asp-page="/Account/Register" class="nav-link">Register</a></li>
+        <li class="nav-item"><a asp-area="Identity" asp-page="/Account/Login" class="nav-link">Login</a></li>
     </ul>
 }
