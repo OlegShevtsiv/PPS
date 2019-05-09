@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Services.Implementation
 {
-    public class CommentService : Service<Comment, CommentDTO, CommentFilter>, ICommentService
+    public class CommentService : Service<Comment, CommentDTO, IFilter>, ICommentService
     {
         public CommentService(IUnitOfWork unitOfWork) :
             base(unitOfWork)
@@ -32,7 +32,7 @@ namespace Services.Implementation
             return MapToDto(entity);
         }
 
-        public override IEnumerable<CommentDTO> Get(CommentFilter filter)
+        public override IEnumerable<CommentDTO> Get(IFilter filter)
         {
             Func<Comment, bool> predicate = GetFilter(filter);
             List<Comment> entities = Repository
@@ -147,12 +147,15 @@ namespace Services.Implementation
             return entity;
         }
 
-        private Func<Comment, bool> GetFilter(CommentFilter filter)
+        private Func<Comment, bool> GetFilter(IFilter filter)
         {
             Func<Comment, bool> result = e => true;
-            if (!String.IsNullOrEmpty(filter?.OwnerId))
+            if (filter is CommentFilter)
             {
-                result += e => e.OwnerId == filter.OwnerId;
+                if (!String.IsNullOrEmpty((filter as CommentFilter)?.OwnerId))
+                {
+                    result += e => e.OwnerId == (filter as CommentFilter).OwnerId;
+                }
             }
 
             return result;

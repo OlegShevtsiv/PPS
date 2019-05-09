@@ -1,6 +1,6 @@
 ﻿namespace Services.Filters
 {
-    public class BookFilter
+    public class BookFilter: IFilter
     {
         public string Title { get; set; }
     }

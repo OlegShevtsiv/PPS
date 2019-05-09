@@ -12,7 +12,7 @@ using System.Linq;
 
 namespace Services.Implementation
 {
-    public class BookService :Service<Book, BookDTO, BookFilter>, IBookService
+    public class BookService :Service<Book, BookDTO, IFilter>, IBookService
     {
         public BookService(IUnitOfWork unitOfWork) :
             base(unitOfWork)
@@ -33,7 +33,7 @@ namespace Services.Implementation
             return MapToDto(entity);
         }
 
-        public override IEnumerable<BookDTO> Get(BookFilter filter)
+        public override IEnumerable<BookDTO> Get(IFilter filter)
         {
             Func<Book, bool> predicate = GetFilter(filter);
             List<Book> entities = Repository
@@ -47,6 +47,8 @@ namespace Services.Implementation
 
             return entities.Select(e => MapToDto(e));
         }
+
+
 
         public override IEnumerable<BookDTO> GetAll()
         {
@@ -165,14 +167,23 @@ namespace Services.Implementation
             return entity;
         }
 
-        private Func<Book, bool> GetFilter(BookFilter filter)
+        private Func<Book, bool> GetFilter(IFilter filter)
         {
             Func<Book, bool> result = e => true;
-            if (!String.IsNullOrEmpty(filter?.Title))
+            if (filter is BookFilter)
             {
-                result += e => e.Title == filter.Title;
+                if (!String.IsNullOrEmpty((filter as BookFilter)?.Title))
+                {
+                    result += e => e.Title == (filter as BookFilter).Title;
+                }
             }
-
+            else if (filter is BookFilterByAuthor)
+            {
+                if (!String.IsNullOrEmpty((filter as BookFilterByAuthor)?.AuthorId))
+                {
+                    result += e => e.AuthorId == (filter as BookFilterByAuthor).AuthorId;
+                }
+            }
             return result;
         }
     }

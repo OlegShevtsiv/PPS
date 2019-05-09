@@ -6,58 +6,62 @@
 @using Services.DTO
 
 <h2>Adding new book</h2>
-<form asp-action="AddBook" asp-controller="ManageLibrary" method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="All" class="text-danger"></div>
-    <div class="form-group">
-        <label asp-for="Title" class="control-label"></label>
-        <input type="text" asp-for="Title" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label asp-for="AuthorId" class="control-label"></label>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddBook" asp-controller="ManageLibrary" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input type="text" asp-for="Title" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="AuthorId" class="control-label"></label>
 
-        <select type="text" asp-for="AuthorId" class="form-control" required>
-            @foreach (var a in (List<AuthorDTO>)ViewBag.Authors)
-            {
-                <option value="@a.Id">@a.Name @a.Surname</option>
-            }
-        </select>
-        <a class="btn btn-sm btn-success" asp-action="AddAuthor">Add new author</a>
+                <select type="text" asp-for="AuthorId" class="form-control" required>
+                    @foreach (var a in (List<AuthorDTO>)ViewBag.Authors)
+                    {
+                        <option value="@a.Id">@a.Name @a.Surname</option>
+                    }
+                </select>
+                <a class="btn btn-sm btn-success" asp-action="AddAuthor">Add new author</a>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input type="number" asp-for="Year" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input type="file" asp-for="Image" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="FileBook" class="control-label"></label>
+                <input type="file" asp-for="FileBook" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input type="text" asp-for="Genre" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea type="text" asp-for="Description" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rate" class="control-label"></label>
+                @*<input type="number" asp-for="Rate" class="form-control" required />*@
+                <select type="number" asp-for="Rate" class="form-control" required>
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RatesAmount" class="control-label"></label>
+                <input type="number" asp-for="RatesAmount" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-success" />
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-        <label asp-for="Year" class="control-label"></label>
-        <input type="number" asp-for="Year" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label asp-for="Image" class="control-label"></label>
-        <input type="file" asp-for="Image" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label asp-for="FileBook" class="control-label"></label>
-        <input type="file" asp-for="FileBook" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label asp-for="Genre" class="control-label"></label>
-        <input type="text" asp-for="Genre" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <label asp-for="Description" class="control-label"></label>
-        <textarea type="text" asp-for="Description" class="form-control"></textarea>
-    </div>
-    <div class="form-group">
-        <label asp-for="Rate" class="control-label"></label>
-        @*<input type="number" asp-for="Rate" class="form-control" required />*@
-        <select type="number" asp-for="Rate" class="form-control" required>
-            @for (int i = 1; i <= 5; i++)
-            {
-                <option value="@i">@i</option>
-            }
-        </select>
-    </div>
-    <div class="form-group">
-        <label asp-for="RatesAmount" class="control-label"></label>
-        <input type="number" asp-for="RatesAmount" class="form-control" required />
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Add" class="btn btn-success" />
-    </div>
-</form>
+</div>

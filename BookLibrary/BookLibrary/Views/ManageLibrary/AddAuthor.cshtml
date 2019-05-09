@@ -5,26 +5,29 @@
 }
 
     <h2>Adding new author</h2>
-    <form asp-action="AddAuthor" asp-controller="ManageLibrary" method="post" enctype="multipart/form-data">
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="Name" class="control-label"></label>
-            <input type="text" asp-for="Name" class="form-control" required />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="AddAuthor" asp-controller="ManageLibrary" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input type="text" asp-for="Name" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Surname" class="control-label"></label>
+                    <input type="text" asp-for="Surname" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Image" class="control-label"></label>
+                    <input type="file" asp-for="Image" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <textarea type="text" asp-for="Description" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add author" class="btn btn-success" />
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label asp-for="Surname" class="control-label"></label>
-            <input type="text" asp-for="Surname" class="form-control" required />
-        </div>
-        <div class="form-group">
-            <label asp-for="Image" class="control-label"></label>
-            <input type="file" asp-for="Image" class="form-control" required />
-        </div>
-        <div class="form-group">
-            <label asp-for="Description" class="control-label"></label>
-            <textarea type="text" asp-for="Description" class="form-control" ></textarea>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Add author" class="btn btn-success" />
-        </div>
-    </form>
-
+    </div>

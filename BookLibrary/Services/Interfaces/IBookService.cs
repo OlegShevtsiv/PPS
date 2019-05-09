@@ -3,7 +3,7 @@ using Services.Filters;
 
 namespace Services.Interfaces
 {
-    public interface IBookService :IService<BookDTO, BookFilter>
+    public interface IBookService :IService<BookDTO, IFilter>
     {
     }
 }

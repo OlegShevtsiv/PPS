@@ -52,6 +52,8 @@ namespace BookLibrary
 
             services.AddScoped<IBookService, BookService>();
 
+            services.AddScoped<ICommentService, CommentService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

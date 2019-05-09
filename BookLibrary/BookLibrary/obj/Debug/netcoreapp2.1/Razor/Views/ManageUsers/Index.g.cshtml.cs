@@ -122,12 +122,12 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(760, 512, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e62395c5eb3439b9b41a90fa47eaebf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fdfc51bae59e4c13bade7572aa549ca3", async() => {
                 BeginContext(824, 30, true);
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(854, 88, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4e461dcc2e2e4f08813f8bdc502cf5b2", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3c06eeff87b4c2eafed379103867644", async() => {
                     BeginContext(934, 4, true);
                     WriteLiteral("Edit");
                     EndContext();
@@ -163,7 +163,7 @@ using Microsoft.AspNetCore.Identity;
                 WriteLiteral("\r\n                            ");
                 EndContext();
                 BeginContext(972, 106, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8914b7ec9e9b48858e5b17f1d7b780ba", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d8aadf838778433299e6603cdb1321c7", async() => {
                     BeginContext(1061, 13, true);
                     WriteLiteral("Access rights");
                     EndContext();
@@ -244,12 +244,12 @@ using Microsoft.AspNetCore.Identity;
             WriteLiteral("                    ");
             EndContext();
             BeginContext(1437, 488, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8f6f2c98001a47b7aa1fe45f2cf7e656", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16e4dc3475974683ada8061b767de426", async() => {
                 BeginContext(1501, 26, true);
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(1527, 88, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0cb509e667194466b1af3c18ee9882d6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5139775bba304414b26a526e6d2f0c9f", async() => {
                     BeginContext(1607, 4, true);
                     WriteLiteral("Edit");
                     EndContext();
@@ -285,7 +285,7 @@ using Microsoft.AspNetCore.Identity;
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(1641, 106, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2674e731e08e4d37b8daf5f715d95ab7", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1897626d93a84f4a9a1a4b5fb246ef1d", async() => {
                     BeginContext(1730, 13, true);
                     WriteLiteral("Access rights");
                     EndContext();

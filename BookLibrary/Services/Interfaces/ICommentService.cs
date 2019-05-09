@@ -3,7 +3,7 @@ using Services.Filters;
 
 namespace Services.Interfaces
 {
-    public interface ICommentService : IService<CommentDTO, CommentFilter>
+    public interface ICommentService : IService<CommentDTO, IFilter>
     {
     }
 }

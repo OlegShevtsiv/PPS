@@ -46,7 +46,6 @@ namespace BookLibrary.Controllers
             {
                 return RedirectToAction("Error");
             }
-            ViewBag.Author = _authorService.Get(currentBook.AuthorId);
             return View(currentBook);
         }
 
@@ -68,13 +67,16 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public IActionResult RateBook(BookDTO ratedBook)
         {
+
             BookDTO book = _bookService.Get(ratedBook.Id);
             if (book == null)
             {
                 return RedirectToAction("Error");
             }
+            uint amount = book.RatesAmount;
             book.RatesAmount++;
-            book.Rate = (book.Rate + ratedBook.Rate) / book.RatesAmount;
+            book.Rate = (book.Rate * amount + ratedBook.Rate) / book.RatesAmount;
+            
             _bookService.Update(book);
             return RedirectToAction("GetBookInfo", "Home",new { id = book.Id });
         }

@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace Services.Implementation
 {
-    public class AuthorService : Service<Author, AuthorDTO, AuthorFilter>, IAuthorService
+    public class AuthorService : Service<Author, AuthorDTO, IFilter>, IAuthorService
     {
         public AuthorService(IUnitOfWork unitOfWork) :
             base(unitOfWork)
@@ -32,7 +32,7 @@ namespace Services.Implementation
             return MapToDto(entity);
         }
 
-        public override IEnumerable<AuthorDTO> Get(AuthorFilter filter)
+        public override IEnumerable<AuthorDTO> Get(IFilter filter)
         {
             Func<Author, bool> predicate = GetFilter(filter);
             List<Author> entities = Repository
@@ -149,12 +149,15 @@ namespace Services.Implementation
             return entity;
         }
 
-        private Func<Author, bool> GetFilter(AuthorFilter filter)
+        private Func<Author, bool> GetFilter(IFilter filter)
         {
             Func<Author, bool> result = e => true;
-            if (!String.IsNullOrEmpty(filter?.Name))
+            if (filter is AuthorFilter)
             {
-                result += e => e.Name == filter.Name;
+                if (!String.IsNullOrEmpty((filter as AuthorFilter)?.Name))
+                {
+                    result += e => e.Name == (filter as AuthorFilter).Name;
+                }
             }
 
             return result;
