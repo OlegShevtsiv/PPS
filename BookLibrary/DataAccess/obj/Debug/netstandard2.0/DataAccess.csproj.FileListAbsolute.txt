@@ -52,3 +52,12 @@ C:\Users\Admin\Desktop\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataA
 C:\Users\Admin\Desktop\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
 C:\Users\Admin\Desktop\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
 C:\Users\Admin\Desktop\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
+G:\Muz\PPS\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+G:\Muz\PPS\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+G:\Muz\PPS\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb

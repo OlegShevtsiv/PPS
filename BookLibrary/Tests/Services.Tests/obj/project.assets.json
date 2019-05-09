@@ -7940,23 +7940,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Ryota\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
+      "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
       "projectName": "Services.Tests",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\PPS\\BookLibrary\\Tests\\Services.Tests\\obj\\",
+      "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
+      "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
+      "outputPath": "G:\\Muz\\PPS\\BookLibrary\\Tests\\Services.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7969,8 +7969,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\PPS\\BookLibrary\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\PPS\\BookLibrary\\Services\\Services.csproj"
+            "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj": {
+              "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj"
             }
           }
         }
@@ -7989,7 +7989,6 @@
             "version": "[15.9.0, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
