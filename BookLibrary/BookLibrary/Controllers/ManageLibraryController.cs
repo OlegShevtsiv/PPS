@@ -31,62 +31,64 @@ namespace BookLibrary.Controllers
 
         public IActionResult AddBook()
         {
-            ViewBag.Authors = _authorService.GetAll().ToList();
+            //ViewBag.Authors = _authorService.GetAll().ToList();
             return View();
         }
 
         [HttpPost]
         public IActionResult AddBook(AddBookViewModel model)
         {
-            if (model == null)
+            if (ModelState.IsValid)
             {
-                return RedirectToAction("Error");
-            }
-            if (model.RatesAmount < 0)
-            {
-                model.RatesAmount = 0;
-                model.Rate = 0;
-            }
-            BookDTO newBook = new BookDTO
-            {
-                Title = model.Title,
-                AuthorId = model.AuthorId,
-                Genre = model.Genre,
-                Rate = model.Rate,
-                Description = model.Description,
-                Year = model.Year,
-                RatesAmount = model.RatesAmount
-            };
-            if (model.Image != null && model.FileBook != null)
-            {
-                byte[] imageData = null;
-                using (var binaryReader = new BinaryReader(model.Image.OpenReadStream()))
+                if (model == null)
                 {
-                    imageData = binaryReader.ReadBytes((int)model.Image.Length);
+                    return RedirectToAction("Error");
                 }
-                newBook.Image = imageData;
-
-                byte[] fileData = null;
-                using (var binaryReader = new BinaryReader(model.FileBook.OpenReadStream()))
+                if (model.RatesAmount < 0)
                 {
-                    fileData = binaryReader.ReadBytes((int)model.FileBook.Length);
+                    model.RatesAmount = 0;
+                    model.Rate = 0;
                 }
-                newBook.FileBook = fileData;
-            }
-            else
-            {
-                return RedirectToAction("Error");
-            }
+                BookDTO newBook = new BookDTO
+                {
+                    Title = model.Title,
+                    AuthorId = model.AuthorId,
+                    Genre = model.Genre,
+                    Rate = model.Rate,
+                    Description = model.Description,
+                    Year = model.Year,
+                    RatesAmount = model.RatesAmount
+                };
+                if (model.Image != null && model.FileBook != null)
+                {
+                    byte[] imageData = null;
+                    using (var binaryReader = new BinaryReader(model.Image.OpenReadStream()))
+                    {
+                        imageData = binaryReader.ReadBytes((int)model.Image.Length);
+                    }
+                    newBook.Image = imageData;
 
-            _bookService.Add(newBook);
-            
+                    byte[] fileData = null;
+                    using (var binaryReader = new BinaryReader(model.FileBook.OpenReadStream()))
+                    {
+                        fileData = binaryReader.ReadBytes((int)model.FileBook.Length);
+                    }
+                    newBook.FileBook = fileData;
+                }
+                else
+                {
+                    return RedirectToAction("Error");
+                }
+
+                _bookService.Add(newBook);
+            }
             return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult EditBook(string id)
         {
-            ViewBag.Authors = _authorService.GetAll().ToList();
+            //ViewBag.Authors = _authorService.GetAll().ToList();
 
             BookDTO getedBook = _bookService.Get(id);
             if (getedBook == null)
@@ -176,11 +178,13 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public IActionResult AddAuthor(AddAuthorViewModel model)
         {
-            
-                //if (model == null)
-                //{
-                //    return RedirectToAction("Error");
-                //}
+            if (ModelState.IsValid)
+            {
+
+                if (model == null)
+                {
+                    return RedirectToAction("Error");
+                }
 
                 AuthorDTO newAuthor = new AuthorDTO
                 {
@@ -202,6 +206,7 @@ namespace BookLibrary.Controllers
                     return RedirectToAction("Error");
                 }
                 _authorService.Add(newAuthor);
+            }
             
             return RedirectToAction("AuthorsList");
         }
