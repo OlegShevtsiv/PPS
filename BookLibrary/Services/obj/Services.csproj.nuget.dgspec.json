@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Github\\PPS\\Services\\Services.csproj": {}
+    "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj": {
+    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\obj\\",
+        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
+        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,21 +43,21 @@
           "dependencies": {
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.0.1, )"
+              "version": "[2.1.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.1.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.2.3, )"
+              "version": "[2.1.4, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -74,20 +74,20 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Github\\PPS\\Services\\Services.csproj": {
+    "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Github\\PPS\\Services\\Services.csproj",
+        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\Services\\obj\\",
+        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
+        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,8 +100,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Github\\PPS\\DataAccess\\DataAccess.csproj"
+              "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
               }
             }
           }
