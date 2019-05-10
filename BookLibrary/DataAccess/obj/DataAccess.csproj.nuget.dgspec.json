@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {}
+    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

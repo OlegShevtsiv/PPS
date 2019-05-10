@@ -10,7 +10,7 @@ using System.Data;
 using System.Linq;
 
 
-namespace Services.Implementation
+namespace Services.Interfaces
 {
     public class RateService : Service<Rate, RateDTO, IFilter>, IRateService
     {

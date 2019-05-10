@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace Services.Implementation
+namespace Services.Interfaces
 {
     public class AuthorService : Service<Author, AuthorDTO, IFilter>, IAuthorService
     {

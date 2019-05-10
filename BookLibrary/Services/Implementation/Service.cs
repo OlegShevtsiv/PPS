@@ -2,7 +2,7 @@
 using Services.Interfaces;
 using DataAccess.Interfaces;
 
-namespace Services.Implementation
+namespace Services.Interfaces
 {
     public abstract class Service<TEntity, TDto, TFilter> : IService<TDto, TFilter>
     where TEntity : class

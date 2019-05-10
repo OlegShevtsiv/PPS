@@ -25,11 +25,13 @@ namespace BookLibrary.Controllers
             _commentService = commentService;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View(_bookService.GetAll().ToList());
         }
 
+        [HttpGet]
         public IActionResult GetAuthorInfo(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -44,7 +46,7 @@ namespace BookLibrary.Controllers
             return View(currentAuthor);
         }
 
-
+        [HttpGet]
         public IActionResult GetBookInfo(string id)
         {
             if (string.IsNullOrEmpty(id))
@@ -77,6 +79,8 @@ namespace BookLibrary.Controllers
             return File(book.FileBook, file_type, file_name);
         }
 
+
+        // поміняти
         [Authorize]
         [HttpPost]
         public IActionResult RateBook(BookDTO ratedBook)
@@ -89,28 +93,35 @@ namespace BookLibrary.Controllers
             uint amount = book.RatesAmount;
             book.RatesAmount++;
             book.Rate = (book.Rate * amount + ratedBook.Rate) / book.RatesAmount;
-            
+
             _bookService.Update(book);
             return RedirectToAction("GetBookInfo", "Home", new { id = book.Id });
         }
 
         [Authorize]
         [HttpPost]
-        public IActionResult CommentBook(string ownerId, string bookId, string text)
+        public IActionResult Comment(string ownerId, string essenceId, string isBook, string text)
         {
-            if (string.IsNullOrEmpty(ownerId) || string.IsNullOrEmpty(bookId) || string.IsNullOrEmpty(text))
+            if (string.IsNullOrEmpty(ownerId) || string.IsNullOrEmpty(essenceId) || string.IsNullOrEmpty(text))
             {
                 RedirectToAction("Error");
             }
             CommentDTO newComment = new CommentDTO
             {
                 OwnerId = ownerId,
-                CommentedEssenceId = bookId,
-                Text = text
+                CommentedEssenceId = essenceId,
+                Text = text,
+                Time = DateTime.Now
             };
             _commentService.Add(newComment);
-            //return PartialView("CommentPartial", bookId);
-            return RedirectToAction("GetBookInfo", "Home", new { id = bookId});
+            if (isBook == "true")
+            {
+                return RedirectToAction("GetBookInfo", "Home", new { id = essenceId });
+            }
+            else
+            {
+                return RedirectToAction("GetAuthorInfo", "Home", new { id = essenceId });
+            }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

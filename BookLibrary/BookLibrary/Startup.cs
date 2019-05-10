@@ -11,7 +11,7 @@ using DataAccess.Models;
 using DataAccess.Interfaces;
 using DataAccess.Implementation;
 using Services.Interfaces;
-using Services.Implementation;
+using Services.Interfaces;
 
 namespace BookLibrary
 {
@@ -50,6 +50,8 @@ namespace BookLibrary
             services.AddScoped<IBookService, BookService>();
 
             services.AddScoped<ICommentService, CommentService>();
+
+            services.AddScoped<IRateService, RateService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

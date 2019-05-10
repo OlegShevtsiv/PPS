@@ -29,8 +29,6 @@ namespace BookLibrary
                     var userManager = services.GetRequiredService<UserManager<User>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await RoleInitializer.InitializeAsync(userManager, rolesManager);
-                    //var context = services.GetRequiredService<LibraryContext>();
-                    //SampleData.Initialize(context);
                 }
                 catch (Exception ex)
                 {

@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using Services.Interfaces;
+@using BookLibrary.ViewModels.Home;
 
 @model Services.DTO.BookDTO
 @{
@@ -63,8 +64,7 @@
         </div>
         <div class="col-12">
 
-
-            @{await Html.RenderPartialAsync("CommentPartial", Model.Id);}
+            @{await Html.RenderPartialAsync("CommentPartial", new CommentedEssenceViewModel { EssenceId = Model.Id, isBook = "true" });}
 
         </div>
         </div>

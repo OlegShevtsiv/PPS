@@ -10,6 +10,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Services.Interfaces;
+using Services.Filters;
 
 namespace BookLibrary.Controllers
 {
@@ -18,13 +20,18 @@ namespace BookLibrary.Controllers
     {
         UserManager<User> _userManager;
         RoleManager<IdentityRole> _roleManager;
-        public ManageUsersController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
+        ICommentService _commentService;
+        public ManageUsersController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager, ICommentService commentService)
         {
             _roleManager = roleManager;
             _userManager = userManager;
+            _commentService = commentService;
         }
+
+        [HttpGet]
         public IActionResult Index() => View();
 
+        [HttpGet]
         public async Task<IActionResult> EditUser(string id)
         {
             User user = await _userManager.FindByIdAsync(id);
@@ -70,16 +77,26 @@ namespace BookLibrary.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Delete(string id)
+        public async Task<ActionResult> DeleteUser(string id)
         {
             User user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
                 IdentityResult result = await _userManager.DeleteAsync(user);
+                if (!result.Succeeded)
+                {
+                    return RedirectToAction("Error");
+                }
             }
+            foreach (var c in _commentService.Get(new CommentFilterByOwnerId { OwnerId = id }))
+            {
+                _commentService.Remove(c.Id);
+            }
+
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public async Task<IActionResult> EditUserRoles(string userId)
         {
             // get user

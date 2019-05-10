@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj": {}
+    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj": {}
   },
   "projects": {
-    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,20 +74,20 @@
         }
       }
     },
-    "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj": {
+    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
         "projectName": "DataAccess.Tests",
-        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
-        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,8 +100,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -120,6 +120,7 @@
               "version": "[15.9.0, )"
             },
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true

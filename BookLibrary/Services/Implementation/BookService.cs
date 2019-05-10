@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
-namespace Services.Implementation
+namespace Services.Interfaces
 {
     public class BookService :Service<Book, BookDTO, IFilter>, IBookService
     {

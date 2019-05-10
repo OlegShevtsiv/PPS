@@ -27,8 +27,10 @@ namespace BookLibrary.Controllers
 
         }
 
+        [HttpGet]
         public IActionResult Index() => View(_bookService.GetAll().ToList());
 
+        [HttpGet]
         public IActionResult AddBook()
         {
             return View();
@@ -165,10 +167,10 @@ namespace BookLibrary.Controllers
             return RedirectToAction("Index");
         }
 
-
-
+        [HttpGet]
         public IActionResult AuthorsList() => View(_authorService.GetAll().ToList());
 
+        [HttpGet]
         public IActionResult AddAuthor()
         {
             return View();
@@ -210,6 +212,7 @@ namespace BookLibrary.Controllers
             return RedirectToAction("AuthorsList");
         }
 
+        [HttpGet]
         public IActionResult EditAuthor(string id)
         {
             AuthorDTO getedAuthor = _authorService.Get(id);
