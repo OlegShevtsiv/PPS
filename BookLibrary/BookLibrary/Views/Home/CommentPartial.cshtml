@@ -13,56 +13,57 @@
 <h3 class="mt-5">Add your comment</h3>
 @if (SignInManager.IsSignedIn(User))
 {
-            <form asp-action="CommentBook" asp-controller="Home" method="post">
-                <div class="form-group">
-                    <input type="hidden" name="ownerId" value="@((await UserManager.GetUserAsync(User)).Id)" />
-                </div>
-                <div class="form-group">
-                    <input type="hidden" name="bookId" value="@Model" />
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" name="text" required rows="10"></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Comment" class="btn btn-success btn-lg" />
-                </div>
-            </form>
+    <form asp-action="CommentBook" asp-controller="Home" method="post">
+        <div class="form-group">
+            <input type="hidden" name="ownerId" value="@((await UserManager.GetUserAsync(User)).Id)" />
+        </div>
+        <div class="form-group">
+            <input type="hidden" name="bookId" value="@Model" />
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="text" required rows="10"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Comment" class="btn btn-success btn-lg" />
+        </div>
+    </form>
 }
 else
 {
-            <form asp-action="CommentBook" asp-controller="Home" method="post">
-                <div class="form-group">
-                    <textarea class="form-control" disabled></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Comment" class="btn btn-success" />
-                </div>
-            </form>
+    <form asp-action="CommentBook" asp-controller="Home" method="post">
+        <div class="form-group">
+            <textarea class="form-control" disabled></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Comment" class="btn btn-success" />
+        </div>
+    </form>
 }
 
 <hr />
 <h3>All Comments</h3>
 @foreach (var c in commentServive.Get(new CommentFilter { CommentedEssenceId = Model }).OrderBy(c => c.Text))
 {
-            @if ((SignInManager.IsSignedIn(User)) && ((await UserManager.GetUserAsync(User)).Id == c.OwnerId))
-            {
-                <p style="text-align:right;">
-                    <b><ins>@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins></b>
-                </p>
-            }
-            else
-            {
-                @if ((await UserManager.IsInRoleAsync((UserManager.Users.First(u => u.Id == c.OwnerId)), "user admin")) ||
-                (await UserManager.IsInRoleAsync((UserManager.Users.First(u => u.Id == c.OwnerId)), "library admin")))
-                {
-                    <p style="color: red"><ins style="color:black">@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins> Admin</p>
-                }
-                else
-                {
-                    <p><ins>@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins></p>
-                }
-            }
-            <div class="form-group">
-                <p class="h4 text-secondary border px-3 py-2 rounded">@c.Text</p>
-            </div>
+    @if ((SignInManager.IsSignedIn(User)) && ((await UserManager.GetUserAsync(User)).Id == c.OwnerId))
+    {
+        <p style="text-align:right;">
+            <b><ins>@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins></b>
+        </p>
+    }
+    else
+    {
+        @if ((await UserManager.IsInRoleAsync((UserManager.Users.First(u => u.Id == c.OwnerId)), "user admin")) ||
+      (await UserManager.IsInRoleAsync((UserManager.Users.First(u => u.Id == c.OwnerId)), "library admin")))
+        {
+            <p style="color: red"><ins style="color:black">@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins> Admin</p>
+        }
+        else
+        {
+            <p><ins>@((UserManager.Users.First(u => u.Id == c.OwnerId)).Name)</ins></p>
+        }
+    }
+    <div class="form-group">
+        <p class="h4 text-secondary border px-3 py-2 rounded">@c.Text</p>
+    </div>
 }
+   

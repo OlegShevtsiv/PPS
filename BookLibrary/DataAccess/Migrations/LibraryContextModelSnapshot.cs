@@ -78,9 +78,27 @@ namespace DataAccess.Migrations
 
                     b.Property<string>("Text");
 
+                    b.Property<DateTime>("Time");
+
                     b.HasKey("Id");
 
                     b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("DataAccess.Models.Rate", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("BookId");
+
+                    b.Property<string>("UserId");
+
+                    b.Property<decimal>("Value");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Rates");
                 });
 
             modelBuilder.Entity("DataAccess.Models.User", b =>

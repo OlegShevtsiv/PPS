@@ -5,28 +5,41 @@
 }
 @inject UserManager<User> UserManager
 @inject SignInManager<User> SignInManager
-<table class="table mt-5">
-    <thead class="thead-light">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in UserManager.Users)
-        {
-            int i = 0;
-            i += 1;
+    <h2 class="mt-5">Users List</h2>
+
+    <table class="table mt-5">
+        <thead class="thead-light">
             <tr>
-                <th scope="row">@i</th>
-                <td>@user.Email</td>
-                <td>@user.Name</td>
-                <td class="d-flex justify-content-end">
-                    @if (await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "library admin"))
-                    {
-                        if (!(await UserManager.IsInRoleAsync(user, "user admin")) || !(await UserManager.IsInRoleAsync(user, "library admin")))
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in UserManager.Users)
+            {
+                int i = 0;
+                i += 1;
+                <tr>
+                    <th scope="row">@i</th>
+                    <td>@user.Email</td>
+                    <td>@user.Name</td>
+                    <td class="d-flex justify-content-end">
+                        @if (await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "library admin"))
+                        {
+                            if (!(await UserManager.IsInRoleAsync(user, "user admin")) || !(await UserManager.IsInRoleAsync(user, "library admin")))
+                            {
+                                <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                                    <a class="btn btn-lg btn-primary" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
+                                    <a class="btn btn-lg btn-primary" asp-action="EditUserRoles" asp-route-userid="@user.Id">Access rights</a>
+                                    <button type="submit" class="btn btn-lg btn-danger">
+                                        Delete
+                                    </button>
+                                </form>
+                            }
+                        }
+                        else if (!(await UserManager.IsInRoleAsync(user, "user admin")))
                         {
                             <form asp-action="Delete" asp-route-id="@user.Id" method="post">
                                 <a class="btn btn-lg btn-primary" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
@@ -36,19 +49,8 @@
                                 </button>
                             </form>
                         }
-                    }
-                    else if (!(await UserManager.IsInRoleAsync(user, "user admin")))
-                    {
-                        <form asp-action="Delete" asp-route-id="@user.Id" method="post">
-                            <a class="btn btn-lg btn-primary" asp-action="EditUser" asp-route-id="@user.Id">Edit</a>
-                            <a class="btn btn-lg btn-primary" asp-action="EditUserRoles" asp-route-userid="@user.Id">Access rights</a>
-                            <button type="submit" class="btn btn-lg btn-danger">
-                                Delete
-                            </button>
-                        </form>
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

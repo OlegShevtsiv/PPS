@@ -30,8 +30,7 @@
                     <div class="card">
                         @if (book.Image != null)
                         {
-
-                            <img class="card-img-top" src="data:image/jpeg;base64,@(Convert.ToBase64String(book.Image))" />
+                            <img class="card-img-top" style="width:120px; height:150px;" src="data:image/jpeg;base64,@(Convert.ToBase64String(book.Image))" />
                         }
                         <div class="card-body">
                             <span class="card-title h1 d-block mt-1 mb-2">@book.Title</span>

@@ -105,6 +105,7 @@ namespace Services.Implementation
             entity.OwnerId = dto.OwnerId;
             entity.CommentedEssenceId = dto.CommentedEssenceId;
             entity.Text = dto.Text;
+            entity.Time = dto.Time;
 
             Repository.Update(entity);
             _unitOfWork.SaveChangesAsync();
@@ -122,7 +123,8 @@ namespace Services.Implementation
                 Id = entity.Id,
                 OwnerId = entity.OwnerId,
                 CommentedEssenceId = entity.CommentedEssenceId,
-                Text = entity.Text
+                Text = entity.Text,
+                Time = entity.Time
             };
 
             return dto;
@@ -140,7 +142,8 @@ namespace Services.Implementation
                 Id = dto.Id,
                 OwnerId = dto.OwnerId,
                 CommentedEssenceId = dto.CommentedEssenceId,
-                Text = dto.Text
+                Text = dto.Text,
+                Time = dto.Time
                 
             };
 
