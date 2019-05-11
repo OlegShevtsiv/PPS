@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @using Services.Interfaces;
-@using BookLibrary.ViewModels.Home;
+@using BookLibrary.ViewModels.ManageComments;
 
 @model Services.DTO.BookDTO
 @{
@@ -22,9 +22,9 @@
                     <a asp-action="DownloadBook" asp-route-id="@Model.Id" class="btn btn-primary btn-lg">Download</a>
                 </div>
             </div>
-                <div class="h2">Description:</div>
-                <p class="text-secondary">@Model.Description</p>
-            </div>
+            <div class="h2">Description:</div>
+            <p class="text-secondary">@Model.Description</p>
+        </div>
         <div class="col-12 col-md-3">
             <div class="book_desc d-flex">
                 <div class="h2 text-bold pr-3">Author</div>
@@ -37,11 +37,11 @@
                 <div class="h2 text-secondary">@Model.Genre</div>
             </div>
             <div class="d-flex">
-                <div class="h2 pr-3">Rate:</div>
-                <div class="h2 text-secondary">@Model.Rate</div>
+                <div class="h2 pr-3">Rating:</div>
+                <div class="h2 text-secondary">@Model.Rate / 5</div>
             </div>
             <div class="d-flex">
-                <div class="h2 pr-3">Rates amount:</div>
+                <div class="h2 pr-3">Number of votes:</div>
                 <div class="h2 text-secondary">@Model.RatesAmount</div>
             </div>
 
@@ -58,18 +58,18 @@
                     </select>
                 </div>
                 <div class="form-group mb-0 d-flex align-items-center ml-3">
-                    <input type="submit" value="Rate Book" class="btn btn-success btn-lg" />
+                    <input type="submit" value="Rate" class="btn btn-success btn-lg" />
                 </div>
             </form>
         </div>
         <div class="col-12">
 
-            @{await Html.RenderPartialAsync("CommentPartial", new CommentedEssenceViewModel { EssenceId = Model.Id, isBook = "true" });}
+            @{await Html.RenderPartialAsync("~/Views/ManageComments/_CommentPartial.cshtml", new CommentedEssenceViewModel { EssenceId = Model.Id, isBook = true });}
 
         </div>
-        </div>
-        
     </div>
 
 </div>
+
+
 

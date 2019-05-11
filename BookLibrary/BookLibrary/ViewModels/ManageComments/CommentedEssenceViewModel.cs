@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookLibrary.ViewModels.Home
+namespace BookLibrary.ViewModels.ManageComments
 {
     public class CommentedEssenceViewModel
     {
         public string EssenceId { get; set; }
-        public string isBook { get; set; }
+        public bool isBook { get; set; }
     }
 }

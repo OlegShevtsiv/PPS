@@ -363,7 +363,6 @@ C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
-C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Home\CommentPartial.g.cshtml.cs
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Home\GetAuthorInfo.g.cshtml.cs
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Home\GetBookInfo.g.cshtml.cs
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
@@ -389,3 +388,5 @@ C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\BookLi
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\BookLibrary.csproj.CopyComplete
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\BookLibrary.dll
 C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\BookLibrary.pdb
+C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageComments\_CommentPartial.g.cshtml.cs
+C:\Users\User\Desktop\PPS\BookLibrary\BookLibrary\obj\Debug\netcoreapp2.1\Razor\Views\ManageComments\_UserCommentsListPartial.g.cshtml.cs

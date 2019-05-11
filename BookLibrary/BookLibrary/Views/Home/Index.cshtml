@@ -1,9 +1,10 @@
-﻿@model IEnumerable<Services.DTO.BookDTO>
+﻿@using Services.Interfaces;
+@model IEnumerable<Services.DTO.BookDTO>
 @{
     ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@inject IAuthorService authorService
 <div class="container">
     <div class="row">
         <div class="col-12 mt-5">
@@ -30,16 +31,20 @@
                     <div class="card">
                         @if (book.Image != null)
                         {
-                            <img class="card-img-top" style="width:120px; height:150px;" src="data:image/jpeg;base64,@(Convert.ToBase64String(book.Image))" />
+                            <img class="card-img-top" @*style="width:120px; height:150px;"*@ src="data:image/jpeg;base64,@(Convert.ToBase64String(book.Image))" />
                         }
-                        <div class="card-body">
-                            <span class="card-title h1 d-block mt-1 mb-2">@book.Title</span>
+                    <div class="card-body">
+                        <span class="card-title h3 d-block mt-1 mb-2">"@book.Title"</span>
+                        
+                            <span class="card-title h4 d-block mt-1 mb-2">Author: <a asp-action="GetAuthorInfo" asp-route-id="@authorService.Get(book.AuthorId).Id">@authorService.Get(book.AuthorId).Name @authorService.Get(book.AuthorId).Surname</a></span>
+                        
                             <hr />
-                            <span class="card-title h2 d-block mt-1 mb-2">Release: @book.Year</span>
-                            <span class="card-title h2 d-block mt-1 mb-2">Rate: @book.Rate</span>
+                            <span class="card-title h4 d-block mt-1 mb-2">Release year: @book.Year</span>
+                            <span class="card-title h4 d-block mt-1 mb-2">Rating: @book.Rate / 5</span>
                             <a class="btn btn-lg btn-primary mt-3" asp-action="GetBookInfo" asp-route-id="@book.Id">More</a>
-                        </div>
                     </div>
+                    </div>
+
                 </div>
             }
         </div>

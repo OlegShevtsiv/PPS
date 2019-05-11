@@ -28,7 +28,7 @@ namespace BookLibrary.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index() => View(_bookService.GetAll().ToList());
+        public IActionResult Index() => View(_bookService.GetAll().ToList().OrderByDescending(b => b.Rate));
 
         [HttpGet]
         public IActionResult AddBook()

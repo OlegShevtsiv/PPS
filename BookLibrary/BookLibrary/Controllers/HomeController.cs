@@ -16,13 +16,11 @@ namespace BookLibrary.Controllers
     {
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
-        private readonly ICommentService _commentService;
 
-        public HomeController(IBookService bookService, IAuthorService authorService, ICommentService commentService)
+        public HomeController(IBookService bookService, IAuthorService authorService)
         {
             _bookService = bookService;
             _authorService = authorService;
-            _commentService = commentService;
         }
 
         [HttpGet]
@@ -79,8 +77,8 @@ namespace BookLibrary.Controllers
             return File(book.FileBook, file_type, file_name);
         }
 
+        // поміняти!!!
 
-        // поміняти
         [Authorize]
         [HttpPost]
         public IActionResult RateBook(BookDTO ratedBook)
@@ -98,31 +96,6 @@ namespace BookLibrary.Controllers
             return RedirectToAction("GetBookInfo", "Home", new { id = book.Id });
         }
 
-        [Authorize]
-        [HttpPost]
-        public IActionResult Comment(string ownerId, string essenceId, string isBook, string text)
-        {
-            if (string.IsNullOrEmpty(ownerId) || string.IsNullOrEmpty(essenceId) || string.IsNullOrEmpty(text))
-            {
-                RedirectToAction("Error");
-            }
-            CommentDTO newComment = new CommentDTO
-            {
-                OwnerId = ownerId,
-                CommentedEssenceId = essenceId,
-                Text = text,
-                Time = DateTime.Now
-            };
-            _commentService.Add(newComment);
-            if (isBook == "true")
-            {
-                return RedirectToAction("GetBookInfo", "Home", new { id = essenceId });
-            }
-            else
-            {
-                return RedirectToAction("GetAuthorInfo", "Home", new { id = essenceId });
-            }
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

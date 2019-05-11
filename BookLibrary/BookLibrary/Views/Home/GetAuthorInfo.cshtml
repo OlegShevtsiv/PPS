@@ -1,5 +1,7 @@
 ﻿@using Services.Interfaces;
 @using Services.Filters;
+@using BookLibrary.ViewModels.ManageComments;
+
 @model Services.DTO.AuthorDTO
 @{
     ViewData["Title"] = "Get author info";
@@ -44,6 +46,11 @@
                     </div>
                 }
             </div>
+        </div>
+        <div class="col-12">
+
+            @{await Html.RenderPartialAsync("~/Views/ManageComments/_CommentPartial.cshtml", new CommentedEssenceViewModel { EssenceId = Model.Id, isBook = false });}
+
         </div>
     </div>
 </div>
