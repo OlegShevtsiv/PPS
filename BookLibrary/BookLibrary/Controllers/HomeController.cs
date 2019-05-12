@@ -28,16 +28,7 @@ namespace BookLibrary.Controllers
         {
             return View(_bookService.GetAll().ToList());
         }
-
-        [NonAction]
-        public BookDTO checkForSearch(string key , BookDTO book)
-        {
-            if (book.Title.Contains(key) || book.Description.Contains(key) || book.Year.ToString().Contains(key))
-            {
-                return book;
-            }
-            return null;
-        }
+      
         [HttpPost]
         public IActionResult Search(string req)
         {
@@ -50,25 +41,24 @@ namespace BookLibrary.Controllers
                 {
                     if (book.Title.Contains(keys[i]))
                     {
-                        param.Add(checkForSearch(keys[i], book));
+                        param.Add(book);
                     }
                     if (book.Year.ToString().Contains(keys[i]))
                     {
-                        param.Add(checkForSearch(keys[i], book));
+                        param.Add(book);
                     }
-                    if (_authorService.Get(book.AuthorId).Name.Equals(keys[i]))
+                    if (_authorService.Get(book.AuthorId).Name == keys[i])
                     {
-                        param.Add(checkForSearch(keys[i], book));
+                        param.Add(book);
                     }
-                    if (_authorService.Get(book.AuthorId).Surname.Equals(keys[i]))
+                    if (_authorService.Get(book.AuthorId).Surname == keys[i])
                     {
-                        param.Add(checkForSearch(keys[i], book));
-
+                        param.Add(book);
                     }
                 }
             }
             param = param.Distinct().ToList();
-            return View("Index", param);
+            return View("~/Views/Home/Index.cshtml", param);
         }
 
         [HttpGet]
