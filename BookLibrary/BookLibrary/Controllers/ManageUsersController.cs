@@ -18,10 +18,10 @@ namespace BookLibrary.Controllers
     [Authorize(Roles = "user admin")]
     public class ManageUsersController : Controller
     {
-        UserManager<User> _userManager;
+        UserManager<IdentityUser> _userManager;
         RoleManager<IdentityRole> _roleManager;
         ICommentService _commentService;
-        public ManageUsersController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager, ICommentService commentService)
+        public ManageUsersController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, ICommentService commentService)
         {
             _roleManager = roleManager;
             _userManager = userManager;
@@ -34,12 +34,12 @@ namespace BookLibrary.Controllers
         [HttpGet]
         public async Task<IActionResult> EditUser(string id)
         {
-            User user = await _userManager.FindByIdAsync(id);
+            IdentityUser user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
                 return RedirectToAction("Error");
             }
-            EditUserViewModel model = new EditUserViewModel { Id = user.Id, Email = user.Email, Name = user.Name };
+            EditUserViewModel model = new EditUserViewModel { Id = user.Id, Email = user.Email, LoginName = user.UserName };
             return View(model);
         }
 
@@ -48,12 +48,12 @@ namespace BookLibrary.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await _userManager.FindByIdAsync(model.Id);
+                IdentityUser user = await _userManager.FindByIdAsync(model.Id);
                 if (user != null)
                 {
                     user.Email = model.Email;
                     user.UserName = model.Email;
-                    user.Name = model.Name;
+                    user.UserName = model.LoginName;
 
                     var result = await _userManager.UpdateAsync(user);
                     if (result.Succeeded)
@@ -79,7 +79,7 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public async Task<ActionResult> DeleteUser(string id)
         {
-            User user = await _userManager.FindByIdAsync(id);
+            IdentityUser user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
                 IdentityResult result = await _userManager.DeleteAsync(user);
@@ -100,7 +100,7 @@ namespace BookLibrary.Controllers
         public async Task<IActionResult> EditUserRoles(string userId)
         {
             // get user
-            User user = await _userManager.FindByIdAsync(userId);
+            IdentityUser user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
                 // gets user`s roles list
@@ -122,7 +122,7 @@ namespace BookLibrary.Controllers
         public async Task<IActionResult> EditUserRoles(string userId, List<string> roles)
         {
             // gets user
-            User user = await _userManager.FindByIdAsync(userId);
+            IdentityUser user = await _userManager.FindByIdAsync(userId);
             if (user != null)
             {
                 // gets user`s roles list

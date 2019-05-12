@@ -9,7 +9,7 @@ namespace BookLibrary.Data
 {
     public class RoleInitializer
     {
-        public static async Task InitializeAsync(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public static async Task InitializeAsync(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             string UserAdminEmail = "oleg28skm@gmail.com";
             string UserAdminPassword = "_Aa123456UserAdmin";
@@ -38,7 +38,7 @@ namespace BookLibrary.Data
             }
             if (await userManager.FindByNameAsync(UserAdminEmail) == null)
             {
-                User UserAdmin = new User { Name = "Oleg Shevtsiv UserAdmin", Email = UserAdminEmail, UserName = UserAdminEmail };
+                IdentityUser UserAdmin = new IdentityUser { UserName = "OlegShevtsivUserAdmin", Email = UserAdminEmail};
                 IdentityResult result = await userManager.CreateAsync(UserAdmin, UserAdminPassword);
                 if (result.Succeeded)
                 {
@@ -47,7 +47,7 @@ namespace BookLibrary.Data
             }
             if (await userManager.FindByNameAsync(LibraryAdminEmail) == null)
             {
-                User LibraryAdmin = new User { Name = "Jhon Smow LibraryAdmin", Email = LibraryAdminEmail, UserName = LibraryAdminEmail };
+                IdentityUser LibraryAdmin = new IdentityUser { UserName = "JhonSmowLibraryAdmin", Email = LibraryAdminEmail};
                 IdentityResult result = await userManager.CreateAsync(LibraryAdmin, LibraryAdminPassword);
                 if (result.Succeeded)
                 {
@@ -57,7 +57,7 @@ namespace BookLibrary.Data
 
             if (await userManager.FindByNameAsync(SuperAdminEmail) == null)
             {
-                User SuperAdmin = new User { Name = "Super Admin", Email = SuperAdminEmail, UserName = SuperAdminEmail };
+                IdentityUser SuperAdmin = new IdentityUser { UserName = "SuperAdmin", Email = SuperAdminEmail};
                 IdentityResult result = await userManager.CreateAsync(SuperAdmin, SuperAdminPassword);
                 if (result.Succeeded)
                 {

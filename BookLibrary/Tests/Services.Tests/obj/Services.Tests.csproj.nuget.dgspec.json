@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj": {}
+    "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -74,14 +74,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Services\\Services.csproj": {
+    "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Services\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -100,8 +100,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -130,14 +130,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj": {
+    "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
         "projectName": "Services.Tests",
-        "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
+        "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Tests\\Services.Tests\\obj\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Tests\\Services.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -156,8 +156,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Services\\Services.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\Services\\Services.csproj"
+              "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj"
               }
             }
           }

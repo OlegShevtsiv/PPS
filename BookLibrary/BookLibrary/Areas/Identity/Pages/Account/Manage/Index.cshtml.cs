@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using DataAccess.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -14,13 +13,13 @@ namespace BookLibrary.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
-        private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
         private readonly IEmailSender _emailSender;
 
         public IndexModel(
-            UserManager<User> userManager,
-            SignInManager<User> signInManager,
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;
@@ -28,7 +27,7 @@ namespace BookLibrary.Areas.Identity.Pages.Account.Manage
             _emailSender = emailSender;
         }
 
-        //public string Username { get; set; }
+        public string Username { get; set; }
 
         public bool IsEmailConfirmed { get; set; }
 
@@ -40,10 +39,6 @@ namespace BookLibrary.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
-            [Required]
-            [Display(Name = "Name")]
-            public string Name { get; set; }
-
             [Required]
             [EmailAddress]
             public string Email { get; set; }
@@ -61,15 +56,14 @@ namespace BookLibrary.Areas.Identity.Pages.Account.Manage
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
-            var name = user.Name;
+            var userName = await _userManager.GetUserNameAsync(user);
             var email = await _userManager.GetEmailAsync(user);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
-            //Username = userName;
+            Username = userName;
 
             Input = new InputModel
             {
-                Name = name,
                 Email = email,
                 PhoneNumber = phoneNumber
             };
@@ -92,55 +86,27 @@ namespace BookLibrary.Areas.Identity.Pages.Account.Manage
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
-            user.Email = Input.Email;
-            user.UserName = Input.Email;
-            user.Name = Input.Name;
-
-            var result = await _userManager.UpdateAsync(user);
-            if (result.Succeeded)
+            var email = await _userManager.GetEmailAsync(user);
+            if (Input.Email != email)
             {
-                return RedirectToPage();
-            }
-            else
-            {
-                foreach (var error in result.Errors)
+                var setEmailResult = await _userManager.SetEmailAsync(user, Input.Email);
+                if (!setEmailResult.Succeeded)
                 {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    var userId = await _userManager.GetUserIdAsync(user);
+                    throw new InvalidOperationException($"Unexpected error occurred setting email for user with ID '{userId}'.");
                 }
             }
 
-            //var name = user.Name;
-            //if (Input.Name != name)
-            //{
-            //    var setNameResult = await _userManager.SetEmailAsync(user, Input.Email);
-            //    if (!setNameResult.Succeeded)
-            //    {
-            //        var userId = await _userManager.GetUserIdAsync(user);
-            //        throw new InvalidOperationException($"Unexpected error occurred setting email for user with ID '{userId}'.");
-            //    }
-            //}
-
-            //var email = await _userManager.GetEmailAsync(user);
-            //if (Input.Email != email)
-            //{
-            //    var setEmailResult = await _userManager.SetEmailAsync(user, Input.Email);
-            //    if (!setEmailResult.Succeeded)
-            //    {
-            //        var userId = await _userManager.GetUserIdAsync(user);
-            //        throw new InvalidOperationException($"Unexpected error occurred setting email for user with ID '{userId}'.");
-            //    }
-            //}
-
-            //var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
-            //if (Input.PhoneNumber != phoneNumber)
-            //{
-            //    var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
-            //    if (!setPhoneResult.Succeeded)
-            //    {
-            //        var userId = await _userManager.GetUserIdAsync(user);
-            //        throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
-            //    }
-            //}
+            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            if (Input.PhoneNumber != phoneNumber)
+            {
+                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, Input.PhoneNumber);
+                if (!setPhoneResult.Succeeded)
+                {
+                    var userId = await _userManager.GetUserIdAsync(user);
+                    throw new InvalidOperationException($"Unexpected error occurred setting phone number for user with ID '{userId}'.");
+                }
+            }
 
             await _signInManager.RefreshSignInAsync(user);
             StatusMessage = "Your profile has been updated";

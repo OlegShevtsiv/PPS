@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using BookLibrary.Data;
-using DataAccess.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -18,7 +17,6 @@ namespace BookLibrary
     {
         public static async Task Main(string[] args)
         {
-            //CreateWebHostBuilder(args).Build().Run();
             var host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
@@ -26,7 +24,7 @@ namespace BookLibrary
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var userManager = services.GetRequiredService<UserManager<User>>();
+                    var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
                     var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     await RoleInitializer.InitializeAsync(userManager, rolesManager);
                 }

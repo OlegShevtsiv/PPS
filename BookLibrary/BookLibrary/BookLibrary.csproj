@@ -2,16 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <UserSecretsId>aspnet-BookLibrary-EF2C5BD3-2D49-402C-A019-A9947D34873E</UserSecretsId>
-    <LangVersion>7.3</LangVersion>
+    <UserSecretsId>aspnet-BookLibrary-A0505662-B2C1-46CC-8C77-B7D259236B94</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="wwwroot\Files\**" />
-    <Content Remove="wwwroot\Files\**" />
-    <EmbeddedResource Remove="wwwroot\Files\**" />
-    <None Remove="wwwroot\Files\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -26,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Identity\Services\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>

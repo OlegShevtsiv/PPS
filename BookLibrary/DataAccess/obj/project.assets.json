@@ -4072,11 +4072,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\PPS\\BookLibrary\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
