@@ -5,8 +5,8 @@
 }
 
 <h2 class="mt-5">Authors list</h2>
-<a class="btn btn-lg btn-success" asp-action="AddAuthor">Add author</a>
-<a class="btn btn-lg btn-default" asp-action="Index">Books list</a>
+<a class="btn btn-success" asp-action="AddAuthor">Add author</a>
+<a class="btn btn-default" asp-action="Index">Books list</a>
 <table class="table mt-5">
     <thead class="thead-light">
             <tr>
@@ -27,8 +27,8 @@
                 <td>@author.Surname</td>
                 <td class="d-flex justify-content-end">
                     <form asp-action="DeleteAuthor" asp-route-id="@author.Id" method="post">
-                        <a class="btn btn-lg btn-primary" asp-action="EditAuthor" asp-route-id="@author.Id">Edit</a>
-                        <button type="submit" class="btn btn-danger btn-lg">
+                        <a class="btn btn-primary" asp-action="EditAuthor" asp-route-id="@author.Id">Edit</a>
+                        <button type="submit" class="btn btn-danger">
                             Delete
                         </button>
                     </form>
