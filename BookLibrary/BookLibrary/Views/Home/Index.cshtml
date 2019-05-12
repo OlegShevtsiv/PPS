@@ -8,9 +8,9 @@
 <div class="container">
     <div class="row">
         <div class="col-12 mt-5">
-            <form asp-action="Search" class="form-inline d-flex flex-nowrap">
+            <form asp-action="Search" asp-controller="Home" class="form-inline d-flex flex-nowrap">
                 <div class="form-group col-6 col-md-9 d-flex flex-nowrap pl-md-0">
-                    <input type="text" class="form-control border-primary w-100 h1 my-0 form-control-lg" id="bookSearch" placeholder="Search book">
+                    <input type="text"  class="form-control border-primary w-100 h1 my-0 form-control-lg" id="bookSearch" placeholder="Search book" name="req">
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg col-6 col-md-3 pr-md-0">Search</button>
             </form>
