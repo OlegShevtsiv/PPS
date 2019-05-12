@@ -29,6 +29,42 @@ namespace BookLibrary.Controllers
             return View(_bookService.GetAll().ToList());
         }
 
+        [NonAction]
+        public BookDTO checkForSearch(string key , BookDTO book)
+
+        {
+
+            if (book.Title.Contains(key) || book.Description.Contains(key) || book.Year.ToString().Contains(key))
+            {
+                return book;
+            }
+            return null;
+        }
+        [HttpGet]
+        public IActionResult Search(string req)
+        {
+            List<BookDTO> param = new List<BookDTO>();
+            List<string> keys = req.Trim().Split(' ').ToList();
+            for(int i =0; i<keys.Count;i++)
+            {
+                keys[i] = keys[i].Trim();
+                foreach  (BookDTO book  in _bookService.GetAll())
+                {
+                    param.Add(checkForSearch(keys[i], book));
+                }
+                
+            }
+
+            param = param.Distinct().ToList();
+            return RedirectToAction("Index", param);
+        }
+
+
+        [HttpGet]
+        public IActionResult Index(List<BookDTO> param)
+        {
+            return View(param);
+        }
         [HttpGet]
         public IActionResult GetAuthorInfo(string id)
         {

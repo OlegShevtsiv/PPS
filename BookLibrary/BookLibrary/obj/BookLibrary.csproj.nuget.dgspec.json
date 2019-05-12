@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Muz\\PPS\\BookLibrary\\BookLibrary\\BookLibrary.csproj": {}
+    "E:\\Pps\\PPS\\BookLibrary\\BookLibrary\\BookLibrary.csproj": {}
   },
   "projects": {
-    "G:\\Muz\\PPS\\BookLibrary\\BookLibrary\\BookLibrary.csproj": {
+    "E:\\Pps\\PPS\\BookLibrary\\BookLibrary\\BookLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\BookLibrary\\BookLibrary.csproj",
+        "projectUniqueName": "E:\\Pps\\PPS\\BookLibrary\\BookLibrary\\BookLibrary.csproj",
         "projectName": "BookLibrary",
-        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\BookLibrary\\BookLibrary.csproj",
+        "projectPath": "E:\\Pps\\PPS\\BookLibrary\\BookLibrary\\BookLibrary.csproj",
         "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\BookLibrary\\obj\\",
+        "outputPath": "E:\\Pps\\PPS\\BookLibrary\\BookLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,11 +30,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
+              "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
               },
-              "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj": {
-                "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj"
+              "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj": {
+                "projectPath": "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj"
               }
             }
           }
@@ -77,14 +77,14 @@
         }
       }
     },
-    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+    "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectPath": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\obj\\",
+        "outputPath": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -147,14 +147,14 @@
         }
       }
     },
-    "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj": {
+    "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj",
+        "projectUniqueName": "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj",
+        "projectPath": "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\obj\\",
+        "outputPath": "E:\\Pps\\PPS\\BookLibrary\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -173,8 +173,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
+              "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
               }
             }
           }

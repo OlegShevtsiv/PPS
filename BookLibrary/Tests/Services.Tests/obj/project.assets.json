@@ -7946,11 +7946,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
+      "projectUniqueName": "E:\\Pps\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
       "projectName": "Services.Tests",
-      "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
+      "projectPath": "E:\\Pps\\PPS\\BookLibrary\\Tests\\Services.Tests\\Services.Tests.csproj",
       "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-      "outputPath": "G:\\Muz\\PPS\\BookLibrary\\Tests\\Services.Tests\\obj\\",
+      "outputPath": "E:\\Pps\\PPS\\BookLibrary\\Tests\\Services.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7969,8 +7969,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj": {
-              "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj"
+            "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj": {
+              "projectPath": "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj"
             }
           }
         }
