@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 using BookLibrary.Models;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using Services.Filters;
 
 namespace BookLibrary.Controllers
 {
@@ -20,11 +21,14 @@ namespace BookLibrary.Controllers
     {
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
-        public ManageLibraryController(IBookService bookService, IAuthorService authorService)
+        private readonly IRateService _rateService;
+        private readonly ICommentService _commentService;
+        public ManageLibraryController(IBookService bookService, IAuthorService authorService, IRateService rateService, ICommentService commentService)
         {
             _bookService = bookService;
             _authorService = authorService;
-
+            _commentService = commentService;
+            _rateService = rateService;
         }
 
         [HttpGet]
@@ -45,16 +49,11 @@ namespace BookLibrary.Controllers
                 {
                     return RedirectToAction("Error");
                 }
-                if (model.RatesAmount < 0)
-                {
-                    model.RatesAmount = 0;
-                    model.Rate = 0;
-                }
                 BookDTO newBook = new BookDTO
                 {
-                    Title = model.Title,
+                    Title = model.Title.Trim(),
                     AuthorId = model.AuthorId,
-                    Genre = model.Genre,
+                    Genre = model.Genre.Trim(),
                     Rate = model.Rate,
                     Description = model.Description,
                     Year = model.Year,
@@ -98,7 +97,7 @@ namespace BookLibrary.Controllers
             }
             EditBookViewModel model = new EditBookViewModel {
                 Id = getedBook.Id,
-                Title = getedBook.Title,
+                Title = getedBook.Title.Trim(),
                 AuthorId = getedBook.AuthorId,
                 Rate = getedBook.Rate,
                 Year = getedBook.Year,
@@ -118,15 +117,10 @@ namespace BookLibrary.Controllers
                 {
                     return RedirectToAction("Error");
                 }
-                if (model.RatesAmount < 0)
-                {
-                    model.RatesAmount = 0;
-                    model.Rate = 0;
-                }
                 BookDTO editedBook = new BookDTO
                 {
                     Id = model.Id,
-                    Title = model.Title,
+                    Title = model.Title.Trim(),
                     AuthorId = model.AuthorId,
                     Genre = model.Genre,
                     Rate = model.Rate,
@@ -163,6 +157,14 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public IActionResult DeleteBook(string id)
         {
+            foreach (var c in _commentService.Get(new CommentFilter { CommentedEssenceId =  id}))
+            {
+                _commentService.Remove(c.Id);
+            }
+            foreach (var r in _rateService.Get(new RateFilterByBookId { BookId = id }))
+            {
+                _rateService.Remove(r.Id);
+            }
             _bookService.Remove(id);
             return RedirectToAction("Index");
         }
@@ -189,9 +191,9 @@ namespace BookLibrary.Controllers
 
                 AuthorDTO newAuthor = new AuthorDTO
                 {
-                    Name = model.Name,
+                    Name = model.Name.Trim(),
                     Description = model.Description,
-                    Surname = model.Surname
+                    Surname = model.Surname.Trim()
                 };
                 if (model.Image != null)
                 {
@@ -222,8 +224,8 @@ namespace BookLibrary.Controllers
             }
             EditAuthorViewModel model = new EditAuthorViewModel
             {
-                Name = getedAuthor.Name,
-                Surname = getedAuthor.Surname,
+                Name = getedAuthor.Name.Trim(),
+                Surname = getedAuthor.Surname.Trim(),
                 Description = getedAuthor.Description
             };
             return View(model);
@@ -236,15 +238,15 @@ namespace BookLibrary.Controllers
             {
                 if (model == null)
                 {
-                    return RedirectToAction("Error");
+                    throw new Exception();
                 }
 
                 AuthorDTO newAuthor = new AuthorDTO
                 {
                     Id = model.Id,
-                    Name = model.Name,
+                    Name = model.Name.Trim(),
                     Description = model.Description,
-                    Surname = model.Surname
+                    Surname = model.Surname.Trim()
                 };
                 if (model.Image != null)
                 {
@@ -257,7 +259,7 @@ namespace BookLibrary.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("Error");
+                    throw new Exception();
                 }
                 _authorService.Update(newAuthor);
             }
@@ -267,6 +269,10 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public IActionResult DeleteAuthor(string id)
         {
+            foreach (var c in _commentService.Get(new CommentFilter { CommentedEssenceId = id }))
+            {
+                _commentService.Remove(c.Id);
+            }
             _authorService.Remove(id);
             return RedirectToAction("AuthorsList");
         }

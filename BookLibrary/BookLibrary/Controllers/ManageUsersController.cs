@@ -18,9 +18,9 @@ namespace BookLibrary.Controllers
     [Authorize(Roles = "user admin")]
     public class ManageUsersController : Controller
     {
-        UserManager<IdentityUser> _userManager;
-        RoleManager<IdentityRole> _roleManager;
-        ICommentService _commentService;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly ICommentService _commentService;
         public ManageUsersController(RoleManager<IdentityRole> roleManager, UserManager<IdentityUser> userManager, ICommentService commentService)
         {
             _roleManager = roleManager;

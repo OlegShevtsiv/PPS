@@ -9,6 +9,7 @@ using DataAccess;
 using Services.Interfaces;
 using Services.DTO;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookLibrary.Controllers
 {
@@ -16,11 +17,15 @@ namespace BookLibrary.Controllers
     {
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IRateService _rateService;
 
-        public HomeController(IBookService bookService, IAuthorService authorService)
+        public HomeController(IBookService bookService, IAuthorService authorService, UserManager<IdentityUser> userManager, IRateService rateService)
         {
             _bookService = bookService;
             _authorService = authorService;
+            _userManager = userManager;
+            _rateService = rateService;
         }
 
         [HttpGet]
@@ -32,33 +37,58 @@ namespace BookLibrary.Controllers
         [HttpPost]
         public IActionResult Search(string req)
         {
+            if (string.IsNullOrEmpty(req))
+            {
+                return RedirectToAction("Index");
+            }
             List<BookDTO> param = new List<BookDTO>();
             List<string> keys = req.Trim().Split(' ').ToList();
             for(int i = 0; i < keys.Count; i++)
             {
-                keys[i] = keys[i].Trim();
+                keys[i] = keys[i].ToLower().Trim();
                 foreach  (BookDTO book  in _bookService.GetAll())
                 {
-                    if (book.Title.Contains(keys[i]))
+                    if (book.Title.ToLower().Contains(keys[i]))
                     {
-                        param.Add(book);
+                        if (!param.Exists(b => b.Id == book.Id))
+                        {
+                            param.Add(book);
+                        }
                     }
-                    if (book.Year.ToString().Contains(keys[i]))
+                    if (book.Year.ToString() == (keys[i]))
                     {
-                        param.Add(book);
+                        if (!param.Exists(b => b.Id == book.Id))
+                        {
+                            param.Add(book);
+                        }
                     }
-                    if (_authorService.Get(book.AuthorId).Name == keys[i])
+                    if (book.Genre.ToLower().ToString().Contains(keys[i]))
                     {
-                        param.Add(book);
+                        if (!param.Exists(b => b.Id == book.Id))
+                        {
+                            param.Add(book);
+                        }
                     }
-                    if (_authorService.Get(book.AuthorId).Surname == keys[i])
+                    if (_authorService.Get(book.AuthorId).Name.ToLower() == keys[i])
                     {
-                        param.Add(book);
+                        if (!param.Exists(b => b.Id == book.Id))
+                        {
+                            param.Add(book);
+                        }
+                    }
+                    if (_authorService.Get(book.AuthorId).Surname.ToLower() == keys[i])
+                    {
+                        if (!param.Exists(b => b.Id == book.Id))
+                        {
+                            param.Add(book);
+                        }
                     }
                 }
             }
-            param = param.Distinct().ToList();
-            return View("~/Views/Home/Index.cshtml", param);
+
+            var result = param.Distinct().ToList();
+
+            return View("~/Views/Home/Index.cshtml", result);
         }
 
         [HttpGet]
@@ -109,23 +139,56 @@ namespace BookLibrary.Controllers
             return File(book.FileBook, file_type, file_name);
         }
 
-        // поміняти!!!
 
         [Authorize]
         [HttpPost]
-        public IActionResult RateBook(BookDTO ratedBook)
+        public IActionResult RateBook(string bookId, string userId, decimal rate)
         {
-            BookDTO book = _bookService.Get(ratedBook.Id);
-            if (book == null)
+            if (string.IsNullOrEmpty(bookId) || string.IsNullOrEmpty(userId) || rate < 1 || rate > 5)
+            {
+                RedirectToAction("Error");
+            }
+            BookDTO bookTORate = _bookService.Get(bookId);
+            if (bookTORate == null)
             {
                 return RedirectToAction("Error");
             }
-            uint amount = book.RatesAmount;
-            book.RatesAmount++;
-            book.Rate = (book.Rate * amount + ratedBook.Rate) / book.RatesAmount;
-
-            _bookService.Update(book);
-            return RedirectToAction("GetBookInfo", "Home", new { id = book.Id });
+            RateDTO yourRate = new RateDTO { BookId = bookId, UserId = userId, Value = rate};
+            List<RateDTO> allRates = _rateService.GetAll().ToList();
+            if (allRates != null)
+            {
+                bool isFinded = false;
+                foreach (var r in allRates)
+                {
+                    if (r.BookId == bookId && r.UserId == userId)
+                    {
+                        isFinded = true;
+                        yourRate.Id = r.Id;
+                        bookTORate.Rate = (bookTORate.Rate * bookTORate.RatesAmount - r.Value + rate) / bookTORate.RatesAmount;
+                        _rateService.Update(yourRate);
+                        _bookService.Update(bookTORate);
+                        break;
+                    }
+                }
+                if (!isFinded)
+                {
+                    uint amount = bookTORate.RatesAmount;
+                    bookTORate.RatesAmount++;
+                    bookTORate.Rate = (bookTORate.Rate * amount + rate) / bookTORate.RatesAmount;
+                    _bookService.Update(bookTORate);
+                    _rateService.Add(yourRate);
+                }
+            }
+            else
+            {
+                uint amount = bookTORate.RatesAmount;
+                bookTORate.RatesAmount++;
+                bookTORate.Rate = (bookTORate.Rate * amount + rate) / bookTORate.RatesAmount;
+                _bookService.Update(bookTORate);
+                _rateService.Add(yourRate);
+            }
+            
+            return RedirectToAction("GetBookInfo", "Home", new { id = bookTORate.Id });
         }
 
 
