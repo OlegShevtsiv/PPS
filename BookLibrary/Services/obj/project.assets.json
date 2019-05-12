@@ -3946,11 +3946,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj",
+      "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "E:\\Pps\\PPS\\BookLibrary\\Services\\Services.csproj",
+      "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-      "outputPath": "E:\\Pps\\PPS\\BookLibrary\\Services\\obj\\",
+      "outputPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3969,8 +3969,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
+            "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
             }
           }
         }

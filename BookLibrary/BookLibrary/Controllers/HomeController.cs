@@ -60,11 +60,11 @@ namespace BookLibrary.Controllers
         }
 
 
-        [HttpGet]
-        public IActionResult Index(List<BookDTO> param)
-        {
-            return View(param);
-        }
+        //[HttpGet]
+        //public IActionResult Index(List<BookDTO> param)
+        //{
+        //    return View(param);
+        //}
         [HttpGet]
         public IActionResult GetAuthorInfo(string id)
         {
