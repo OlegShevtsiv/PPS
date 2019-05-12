@@ -79,3 +79,12 @@ C:\Users\User\Desktop\Lib\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAc
 C:\Users\User\Desktop\Lib\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
 C:\Users\User\Desktop\Lib\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
 C:\Users\User\Desktop\Lib\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
+G:\Muz\PPS\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+G:\Muz\PPS\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+G:\Muz\PPS\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+G:\Muz\PPS\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs

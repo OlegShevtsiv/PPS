@@ -94,3 +94,15 @@ C:\Users\User\Desktop\Lib\BookLibrary\Services\obj\Debug\netstandard2.0\Services
 C:\Users\User\Desktop\Lib\BookLibrary\Services\obj\Debug\netstandard2.0\Services.csproj.CopyComplete
 C:\Users\User\Desktop\Lib\BookLibrary\Services\obj\Debug\netstandard2.0\Services.dll
 C:\Users\User\Desktop\Lib\BookLibrary\Services\obj\Debug\netstandard2.0\Services.pdb
+G:\Muz\PPS\BookLibrary\Services\obj\Debug\netstandard2.0\Services.dll
+G:\Muz\PPS\BookLibrary\Services\obj\Debug\netstandard2.0\Services.pdb
+G:\Muz\PPS\BookLibrary\Services\bin\Debug\netstandard2.0\Services.deps.json
+G:\Muz\PPS\BookLibrary\Services\bin\Debug\netstandard2.0\Services.dll
+G:\Muz\PPS\BookLibrary\Services\bin\Debug\netstandard2.0\Services.pdb
+G:\Muz\PPS\BookLibrary\Services\bin\Debug\netstandard2.0\DataAccess.dll
+G:\Muz\PPS\BookLibrary\Services\bin\Debug\netstandard2.0\DataAccess.pdb
+G:\Muz\PPS\BookLibrary\Services\obj\Debug\netstandard2.0\Services.csprojAssemblyReference.cache
+G:\Muz\PPS\BookLibrary\Services\obj\Debug\netstandard2.0\Services.csproj.CoreCompileInputs.cache
+G:\Muz\PPS\BookLibrary\Services\obj\Debug\netstandard2.0\Services.AssemblyInfoInputs.cache
+G:\Muz\PPS\BookLibrary\Services\obj\Debug\netstandard2.0\Services.AssemblyInfo.cs
+G:\Muz\PPS\BookLibrary\Services\obj\Debug\netstandard2.0\Services.csproj.CopyComplete

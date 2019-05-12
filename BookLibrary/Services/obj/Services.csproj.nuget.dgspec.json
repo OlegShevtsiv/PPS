@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj": {}
+    "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\obj\\",
+        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
+        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,20 +74,20 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj": {
+    "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj",
+        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\Services\\obj\\",
+        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
+        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -100,8 +100,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\Lib\\BookLibrary\\DataAccess\\DataAccess.csproj"
+              "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
               }
             }
           }
