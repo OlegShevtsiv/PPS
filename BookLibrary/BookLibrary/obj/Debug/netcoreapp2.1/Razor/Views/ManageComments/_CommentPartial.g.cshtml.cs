@@ -89,7 +89,7 @@ using Services.Filters;
             WriteLiteral("    ");
             EndContext();
             BeginContext(397, 778, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8b8b7a81b5114329948659a9ccd9d34f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd50246660174a0d988a2b0d0931256b", async() => {
                 BeginContext(473, 83, true);
                 WriteLiteral("\r\n        <div class=\"form-group\">\r\n            <input type=\"hidden\" name=\"ownerId\"");
                 EndContext();
@@ -165,7 +165,7 @@ else
             WriteLiteral("    ");
             EndContext();
             BeginContext(1193, 331, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f5da5fab052d4375ae151f4927bcdffc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c054b915394a4fd38831b67b311c12c5", async() => {
                 BeginContext(1269, 248, true);
                 WriteLiteral("\r\n        <div class=\"form-group\">\r\n            <textarea class=\"form-control\" disabled></textarea>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <input type=\"submit\" value=\"Comment\" class=\"btn btn-success\" />\r\n        </div>\r\n    ");
                 EndContext();
@@ -229,7 +229,7 @@ else
             WriteLiteral("</b>\r\n                </p>\r\n\r\n                <div class=\"col-lg-11\">\r\n                    ");
             EndContext();
             BeginContext(2106, 1346, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "312b98cb1eec48039143b197165ed31e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "be7bf62618234eb58a07547d6674ccc5", async() => {
                 BeginContext(2183, 110, true);
                 WriteLiteral("\r\n                        <div class=\"form-group\">\r\n                            <input type=\"hidden\" name=\"id\"");
                 EndContext();
@@ -317,7 +317,7 @@ WriteAttributeValue("", 3024, c.Time.ToString(), 3024, 18, false);
             WriteLiteral("\r\n                </div>\r\n                <div class=\"col-lg-1\">\r\n                    ");
             EndContext();
             BeginContext(3538, 831, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3a78a54757f24f8481f1d81a932aeed5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9b79f588a1b43a8b66d8a93422aa3c6", async() => {
                 BeginContext(3617, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();
@@ -559,7 +559,7 @@ WriteAttributeValue("", 4131, Model.isBook.ToString(), 4131, 24, false);
             WriteLiteral("</p>\r\n                    </div>\r\n                </div>\r\n                <div class=\"col-lg-1\">\r\n                    ");
             EndContext();
             BeginContext(6789, 781, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "abc2ccf52f0f493cab11c7a16f88d37f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "03c52548d7aa49b684e568d67d0c2961", async() => {
                 BeginContext(6868, 116, true);
                 WriteLiteral("\r\n                        <div class=\"form-group\">\r\n                            <input type=\"hidden\" name=\"comentId\"");
                 EndContext();
@@ -743,7 +743,7 @@ WriteAttributeValue("", 7332, Model.isBook.ToString(), 7332, 24, false);
             WriteLiteral("</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"col-lg-1\">\r\n                ");
             EndContext();
             BeginContext(9002, 729, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b74e4b576f294128959c6a4034c07c33", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad9f43be9a3448eaba9d208265f6c14a", async() => {
                 BeginContext(9081, 108, true);
                 WriteLiteral("\r\n                    <div class=\"form-group\">\r\n                        <input type=\"hidden\" name=\"comentId\"");
                 EndContext();
