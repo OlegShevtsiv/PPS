@@ -48,9 +48,24 @@ namespace BookLibrary.Controllers
                 keys[i] = keys[i].Trim();
                 foreach  (BookDTO book  in _bookService.GetAll())
                 {
-                    param.Add(checkForSearch(keys[i], book));
+                    if (book.Title.Contains(keys[i]))
+                    {
+                        param.Add(checkForSearch(keys[i], book));
+                    }
+                    if (book.Year.ToString().Contains(keys[i]))
+                    {
+                        param.Add(checkForSearch(keys[i], book));
+                    }
+                    if (_authorService.Get(book.AuthorId).Name.Equals(keys[i]))
+                    {
+                        param.Add(checkForSearch(keys[i], book));
+                    }
+                    if (_authorService.Get(book.AuthorId).Surname.Equals(keys[i]))
+                    {
+                        param.Add(checkForSearch(keys[i], book));
+
+                    }
                 }
-                
             }
             param = param.Distinct().ToList();
             return View("Index", param);
