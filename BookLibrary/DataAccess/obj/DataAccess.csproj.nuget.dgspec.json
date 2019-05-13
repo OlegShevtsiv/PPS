@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {}
+    "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+    "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
+        "projectPath": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
-        "outputPath": "G:\\Muz\\PPS\\BookLibrary\\DataAccess\\obj\\",
+        "outputPath": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
