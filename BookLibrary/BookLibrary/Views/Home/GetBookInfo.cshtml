@@ -18,7 +18,7 @@
         </div>
         <div class="col-12 col-md-5 d-flex flex-column pt-3">
             <div class="d-flex">
-                <h2 class="pr-3">@Model.Title</h2>
+                <h2 class="pr-3 my-0">@Model.Title</h2>
                 <div>
                     <a asp-action="DownloadBook" asp-route-id="@Model.Id" class="btn btn-primary">Download</a>
                 </div>
@@ -28,8 +28,8 @@
         </div>
         <div class="col-12 col-md-3">
             <div class="book_desc d-flex">
-                <div class="h3 text-bold pr-3">Author</div>
-                <div class="h4">
+                <div class="h3 text-bold pr-3  my-0">Author</div>
+                <div class="h4 pt-1 my-0">
                     <a asp-action="GetAuthorInfo" asp-route-id="@authorService.Get(Model.AuthorId).Id">@authorService.Get(Model.AuthorId).Name @authorService.Get(Model.AuthorId).Surname</a>
                 </div>
             </div>
