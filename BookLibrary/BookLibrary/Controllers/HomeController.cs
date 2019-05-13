@@ -43,10 +43,11 @@ namespace BookLibrary.Controllers
             }
             List<BookDTO> param = new List<BookDTO>();
             List<string> keys = req.Trim().Split(' ').ToList();
+            List<BookDTO> allBooks = _bookService.GetAll().ToList();
             for(int i = 0; i < keys.Count; i++)
             {
                 keys[i] = keys[i].ToLower().Trim();
-                foreach  (BookDTO book  in _bookService.GetAll())
+                foreach  (BookDTO book  in allBooks)
                 {
                     if (book.Title.ToLower().Contains(keys[i]))
                     {
@@ -55,7 +56,7 @@ namespace BookLibrary.Controllers
                             param.Add(book);
                         }
                     }
-                    if (book.Year.ToString() == (keys[i]))
+                    if (book.Year.ToString() == keys[i])
                     {
                         if (!param.Exists(b => b.Id == book.Id))
                         {
