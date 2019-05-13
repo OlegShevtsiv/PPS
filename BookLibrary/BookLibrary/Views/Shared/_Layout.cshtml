@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - BookLibrary</title>
 
     <environment include="Development">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
@@ -19,17 +20,19 @@
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand text-white"><i class="fas fa-book pr-3"></i>Book Library</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <partial name="_LoginPartial" />
+            <div class="d-flex justify-content-between w-100 flex-wrap">
+                <div class="navbar-header w-100">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand text-white"><i class="fas fa-book pr-3"></i>Book Library</a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <partial name="_LoginPartial" />
+                </div>
             </div>
         </div>
     </nav>

@@ -130,3 +130,15 @@ C:\Users\Admin\Desktop\PPS2\BookLibrary\Services\obj\Debug\netstandard2.0\Servic
 C:\Users\Admin\Desktop\PPS2\BookLibrary\Services\obj\Debug\netstandard2.0\Services.csproj.CopyComplete
 C:\Users\Admin\Desktop\PPS2\BookLibrary\Services\obj\Debug\netstandard2.0\Services.dll
 C:\Users\Admin\Desktop\PPS2\BookLibrary\Services\obj\Debug\netstandard2.0\Services.pdb
+E:\GitHUb\PPS3\BookLibrary\Services\bin\Debug\netstandard2.0\Services.deps.json
+E:\GitHUb\PPS3\BookLibrary\Services\bin\Debug\netstandard2.0\Services.dll
+E:\GitHUb\PPS3\BookLibrary\Services\bin\Debug\netstandard2.0\Services.pdb
+E:\GitHUb\PPS3\BookLibrary\Services\bin\Debug\netstandard2.0\DataAccess.dll
+E:\GitHUb\PPS3\BookLibrary\Services\bin\Debug\netstandard2.0\DataAccess.pdb
+E:\GitHUb\PPS3\BookLibrary\Services\obj\Debug\netstandard2.0\Services.csprojAssemblyReference.cache
+E:\GitHUb\PPS3\BookLibrary\Services\obj\Debug\netstandard2.0\Services.csproj.CoreCompileInputs.cache
+E:\GitHUb\PPS3\BookLibrary\Services\obj\Debug\netstandard2.0\Services.AssemblyInfoInputs.cache
+E:\GitHUb\PPS3\BookLibrary\Services\obj\Debug\netstandard2.0\Services.AssemblyInfo.cs
+E:\GitHUb\PPS3\BookLibrary\Services\obj\Debug\netstandard2.0\Services.csproj.CopyComplete
+E:\GitHUb\PPS3\BookLibrary\Services\obj\Debug\netstandard2.0\Services.dll
+E:\GitHUb\PPS3\BookLibrary\Services\obj\Debug\netstandard2.0\Services.pdb

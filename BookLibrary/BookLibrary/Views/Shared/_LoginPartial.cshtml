@@ -6,24 +6,24 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right flex-md-row">
             @if (await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "library admin"))
             {
                 <li class="nav-item">
-                    <a style="color:lightgreen" class="nav-link" href="/ManageLibrary/Index" title="Manage">Manage Library</a>
+                    <a style="color:lightgreen" class="nav-link px-3" href="/ManageLibrary/Index" title="Manage">Manage Library</a>
                 </li>
             }
             @if (await UserManager.IsInRoleAsync((await UserManager.GetUserAsync(User)), "user admin"))
             {
                 <li class="nav-item">
-                    <a style="color:orangered" class="nav-link" href="/ManageUsers/Index" title="Manage">Manage users</a>
+                    <a style="color:orangered" class="nav-link px-3" href="/ManageUsers/Index" title="Manage">Manage users</a>
                 </li>
             }
             <li class="nav-item">
-                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="nav-link text-white">Hello @UserManager.GetUserName(User)!</a>
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="nav-link text-white px-3">Hello @UserManager.GetUserName(User)!</a>
             </li>
             <li class="nav-item">
-                <button type="submit" class="btn btn-danger navbar-btn">Logout</button>
+                <button type="submit" class="btn btn-danger navbar-btn ml-md-3">Logout</button>
             </li>
         </ul>
     </form>

@@ -106,3 +106,12 @@ C:\Users\Admin\Desktop\PPS2\BookLibrary\DataAccess\obj\Debug\netstandard2.0\Data
 C:\Users\Admin\Desktop\PPS2\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
 C:\Users\Admin\Desktop\PPS2\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
 C:\Users\Admin\Desktop\PPS2\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
+E:\GitHUb\PPS3\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.deps.json
+E:\GitHUb\PPS3\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.dll
+E:\GitHUb\PPS3\BookLibrary\DataAccess\bin\Debug\netstandard2.0\DataAccess.pdb
+E:\GitHUb\PPS3\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.csprojAssemblyReference.cache
+E:\GitHUb\PPS3\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.csproj.CoreCompileInputs.cache
+E:\GitHUb\PPS3\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfoInputs.cache
+E:\GitHUb\PPS3\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.AssemblyInfo.cs
+E:\GitHUb\PPS3\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.dll
+E:\GitHUb\PPS3\BookLibrary\DataAccess\obj\Debug\netstandard2.0\DataAccess.pdb
