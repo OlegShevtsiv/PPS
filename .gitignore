@@ -11,16 +11,16 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+BookLibrary/[Dd]ebug/
+BookLibrary/[Dd]ebugPublic/
+BookLibrary/[Rr]elease/
+BookLibrary/[Rr]eleases/
+BookLibrary/x64/
+BookLibrary/x86/
+BookLibrary/bld/
+BookLibrary/[Bb]in/
+BookLibrary/[Oo]bj/
+BookLibrary/[Ll]og/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -260,9 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 BookLibrary/.vs/BookLibrary/v15/.suo
-BookLibrary/.vs/BookLibrary/v15/
-BookLibrary/.vs/BookLibrary/v15/Server/sqlite3/storage.ide-wal
-BookLibrary/.vs/BookLibrary/v15/Server/sqlite3/storage.ide-shm
-BookLibrary/BookLibrary/bin/Debug/netcoreapp2.1/BookLibrary.deps.json
-BookLibrary/BookLibrary/bin/Debug/netcoreapp2.1/BookLibrary.pdb
-BookLibrary/BookLibrary/obj/
+BookLibrary/BookLibrary/bin/Debug/netcoreapp2.1/BookLibrary.Views.pdb

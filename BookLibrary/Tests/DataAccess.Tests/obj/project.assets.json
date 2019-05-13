@@ -7922,23 +7922,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "C:\\Users\\Ryota\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\PPS2\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
+      "projectUniqueName": "E:\\Pps\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
       "projectName": "DataAccess.Tests",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\PPS2\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\PPS2\\BookLibrary\\Tests\\DataAccess.Tests\\obj\\",
+      "projectPath": "E:\\Pps\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\DataAccess.Tests.csproj",
+      "packagesPath": "C:\\Users\\Ryota\\.nuget\\packages\\",
+      "outputPath": "E:\\Pps\\PPS\\BookLibrary\\Tests\\DataAccess.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ryota\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7951,8 +7951,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Admin\\Desktop\\PPS2\\BookLibrary\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Admin\\Desktop\\PPS2\\BookLibrary\\DataAccess\\DataAccess.csproj"
+            "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "E:\\Pps\\PPS\\BookLibrary\\DataAccess\\DataAccess.csproj"
             }
           }
         }
@@ -7971,7 +7971,6 @@
             "version": "[15.9.0, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
