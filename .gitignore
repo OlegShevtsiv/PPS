@@ -260,4 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 BookLibrary/.vs/BookLibrary/v15/.suo
-BookLibrary/BookLibrary/bin/Debug/netcoreapp2.1/BookLibrary.Views.pdb
+BookLibrary/BookLibrary/obj/*
