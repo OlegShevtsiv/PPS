@@ -1,9 +1,10 @@
+﻿
 using System;
 using Xunit;
 
 namespace BookLibrary.Tests
 {
-    public class UnitTest1
+    public class ManageUsersControllerTests
     {
         [Fact]
         public void Test1()
