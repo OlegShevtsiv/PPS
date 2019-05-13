@@ -261,3 +261,7 @@ __pycache__/
 *.pyc
 BookLibrary/.vs/BookLibrary/v15/.suo
 BookLibrary/BookLibrary/bin/Debug/netcoreapp2.1/BookLibrary.Views.pdb
+BookLibrary/.vs/BookLibrary/v15/Server/sqlite3/storage.ide-wal
+BookLibrary/.vs/BookLibrary/v15/Server/sqlite3/storage.ide-wal
+BookLibrary/.vs/BookLibrary/v15/Server/sqlite3/storage.ide-shm
+BookLibrary/BookLibrary/bin/Debug/netcoreapp2.1/BookLibrary.deps.json
